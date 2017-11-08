@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="CS Software Development Project" company="RHHS" webLink="http://" view-date="2017-11-05" view-index="2" gantt-divider-location="340" resource-divider-location="300" version="2.7.2" locale="en_CA">
+    <description><![CDATA[Due to the small number of people working on the project, I used colour codings to show who is doing which task
+Legend:
+	Purple: All resources working
+	Red: Ali Meshkat only 
+	Green: Israel only
+	Yellow: Vincent only
+	Blue: Izzy and vincent]]></description>
+    <view zooming-state="default:1" id="gantt-chart">
+        <field id="tpd3" name="Name" width="56" order="0"/>
+        <field id="tpd4" name="Begin date" width="21" order="1"/>
+        <field id="tpd5" name="End date" width="21" order="2"/>
+        <option id="color.recent"><![CDATA[#990099 #000000 #00ffff #ff0000 #00ff00 #ffff00 #0000ff]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="50" order="0"/>
+        <field id="1" name="Default role" width="50" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="true"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="Defining Requirements" color="#000000" meeting="false" start="2017-11-06" duration="2" complete="0" expand="false">
+            <notes><![CDATA[decide on gui 
+
+any research that may be necessary 
+	eg. whehter we can do something 
+
+sketches / screen shots  of how its gonna look like  ]]></notes>
+            <depend id="1" type="2" difference="0" hardness="Strong"/>
+            <task id="13" name="Understanding the problem" color="#990099" meeting="false" start="2017-11-06" duration="2" complete="0" expand="true">
+                <notes><![CDATA[Determining any programming needs and things that need to be learned ]]></notes>
+            </task>
+            <task id="12" name="Research" color="#990099" meeting="false" start="2017-11-06" duration="2" complete="0" expand="true"/>
+            <task id="9" name="Screen shots" color="#990099" meeting="false" start="2017-11-06" duration="2" complete="0" expand="true">
+                <notes><![CDATA[sketches of what the gui would look like for the best and easiest to work with look]]></notes>
+                <depend id="15" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="64" name="Confirm design with client" color="#990099" meeting="false" start="2017-11-07" duration="1" complete="0" expand="true">
+                <notes><![CDATA[confirm the sketches and make sure the client is getting everything he needs 
+
+any improvements or suggestions + feedback 
+
+
+adding the new things to design]]></notes>
+                <depend id="15" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="1" name="Design" color="#000000" meeting="false" start="2017-11-08" duration="2" complete="0" expand="false">
+            <depend id="56" type="2" difference="0" hardness="Strong"/>
+            <task id="17" name="Breakdown of Components" color="#ff0000" meeting="false" start="2017-11-08" duration="1" complete="0" expand="true"/>
+            <task id="15" name="Pseudocode" color="#990099" meeting="false" start="2017-11-08" duration="2" complete="0" priority="2" expand="true">
+                <depend id="42" type="2" difference="0" hardness="Strong"/>
+                <depend id="44" type="2" difference="0" hardness="Strong"/>
+                <depend id="128" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="56" name="Start of Programming" color="#ff0000" meeting="true" start="2017-11-10" duration="0" complete="0" expand="true">
+            <notes><![CDATA[End of design 
+
+]]></notes>
+            <depend id="2" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="2" name="Development" color="#000000" meeting="false" start="2017-11-10" duration="5" complete="0" expand="false">
+            <notes><![CDATA[Actually programming the parts of the program 
+
+tests must be made after different components are added]]></notes>
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+            <task id="42" name="Pragramming backend" color="#ffff00" meeting="false" start="2017-11-10" duration="3" complete="0" expand="false">
+                <notes><![CDATA[involves the storing the data + processing/sorting/searches of data
+
+involves making the file into a .exe(export as .jar)]]></notes>
+                <task id="134" name="Create data structure" color="#ffff00" meeting="false" start="2017-11-10" duration="2" complete="0" expand="true">
+                    <depend id="181" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="142" name="Search method" color="#ff0000" meeting="false" start="2017-11-10" duration="2" complete="0" expand="true">
+                    <notes><![CDATA[Finds the equipment/chemical they are looking for by input from keyboard 
+
+try to show suggestions as they type. otherwise it will be really difficult to search for  the exact string value for the user]]></notes>
+                    <depend id="253" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="181" name="add and edit methods" color="#ffff00" meeting="false" start="2017-11-12" duration="1" complete="0" expand="true">
+                    <depend id="191" type="2" difference="0" hardness="Strong"/>
+                    <depend id="203" type="2" difference="0" hardness="Strong"/>
+                </task>
+            </task>
+            <task id="44" name="pragramming GUI" color="#00ff00" meeting="false" start="2017-11-10" duration="4" complete="0" expand="false">
+                <notes><![CDATA[involves all the user interface 
+]]></notes>
+                <task id="128" name="Front page - first tab" color="#00ff00" meeting="false" start="2017-11-10" duration="2" complete="0" expand="true">
+                    <depend id="138" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="131" name="Second tab: Search" color="#00ff00" meeting="false" start="2017-11-12" duration="1" complete="0" expand="true">
+                    <notes><![CDATA[only one day]]></notes>
+                </task>
+                <task id="138" name="Add and edit GUI" color="#00ff00" meeting="false" start="2017-11-12" duration="1" complete="0" expand="true">
+                    <notes><![CDATA[involves a button that opens the window where the user can input the name, quantity, etc of the new object(or the object being edited)
+
+
+
+for edit the same window opens 
+
+would be nice to have the edit work with a righrt click on the equipment ]]></notes>
+                </task>
+                <task id="191" name="Thrid tab: sign in and out" color="#00ffff" meeting="false" start="2017-11-13" duration="1" complete="0" expand="true">
+                    <depend id="203" type="2" difference="0" hardness="Strong"/>
+                </task>
+            </task>
+            <task id="113" name="Coordinating  tasks" color="#ff0000" meeting="false" start="2017-11-10" duration="2" complete="0" expand="true">
+                <notes><![CDATA[putting the two parts of the program together after each part is finished
+this will be done using the github used]]></notes>
+            </task>
+            <task id="253" name="Coodinating tasls" color="#ff0000" meeting="false" start="2017-11-12" duration="2" complete="0" expand="true">
+                <notes><![CDATA[putting the two parts of the program together after each part is finished
+this will be done using the github used]]></notes>
+            </task>
+            <task id="203" name="Putting everything together" color="#990099" meeting="false" start="2017-11-14" duration="1" complete="0" priority="2" expand="true">
+                <notes><![CDATA[Used to finalize program and put everything together]]></notes>
+            </task>
+        </task>
+        <task id="3" name="Testing" color="#000000" meeting="false" start="2017-11-15" duration="1" complete="0" expand="false">
+            <notes><![CDATA[includes bug fixing and testing all features thoroughly
+
+finish any programmings left]]></notes>
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+            <depend id="124" type="2" difference="0" hardness="Strong"/>
+            <depend id="126" type="2" difference="0" hardness="Strong"/>
+            <task id="286" name="Testing" color="#990099" meeting="false" start="2017-11-15" duration="1" complete="0" expand="true"/>
+            <task id="288" name="Bug fix" color="#990099" meeting="false" start="2017-11-15" duration="1" complete="0" expand="true"/>
+            <task id="290" name="Finish any programmings left" color="#990099" meeting="false" start="2017-11-15" duration="1" complete="0" expand="true"/>
+        </task>
+        <task id="124" name="End of programming" color="#ff0000" meeting="true" start="2017-11-16" duration="0" complete="0" expand="true">
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="5" name="Implementation" color="#000000" meeting="false" start="2017-11-16" duration="1" complete="0" expand="false">
+            <task id="126" name="Give program to client" color="#990099" meeting="false" start="2017-11-16" duration="1" complete="0" expand="true">
+                <notes><![CDATA[Install it on their computer and run sample test to ensure the program is working.]]></notes>
+            </task>
+        </task>
+        <task id="186" name="End of project" color="#ff0000" meeting="true" start="2017-11-17" duration="0" complete="0" expand="true"/>
+    </tasks>
+    <resources>
+        <resource id="0" name="Ali Meshkat" function="Default:1" contacts="" phone=""/>
+        <resource id="1" name="Israel " function="SoftwareDevelopment:2" contacts="" phone=""/>
+        <resource id="2" name="Vincent Zhang" function="SoftwareDevelopment:2" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="0" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="17" resource-id="0" function="Default:1" responsible="true" load="20.0"/>
+        <allocation task-id="15" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="113" resource-id="0" function="Default:1" responsible="true" load="50.0"/>
+        <allocation task-id="126" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="142" resource-id="0" function="Default:1" responsible="true" load="50.0"/>
+        <allocation task-id="203" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="253" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="44" resource-id="0" function="Default:1" responsible="false" load="0.0"/>
+        <allocation task-id="3" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="0" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="15" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="203" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="191" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="128" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="131" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="50.0"/>
+        <allocation task-id="138" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="50.0"/>
+        <allocation task-id="3" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="0" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="15" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="134" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="203" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="191" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="181" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="3" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <taskdisplaycolumns>
+        <displaycolumn property-id="tpd2" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd6" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd3" order="0" width="191" visible="true"/>
+        <displaycolumn property-id="tpd4" order="1" width="73" visible="true"/>
+        <displaycolumn property-id="tpd7" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd8" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd12" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd5" order="2" width="72" visible="true"/>
+        <displaycolumn property-id="tpd10" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd11" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd9" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd1" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd13" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd0" order="-1" width="75" visible="false"/>
+    </taskdisplaycolumns>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+</project>
