@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 public class Item {
-  int total;
-  ArrayList<Integer> numberOfItemSignOut=new ArrayList<Integer>();
-  ArrayList<String> nameOfTeacherSignOut=new ArrayList<String>();
+  private static int numberInStock;
+  private int total;
+  private ArrayList<Integer> numberOfItemSignOut=new ArrayList<Integer>();
+  private ArrayList<String> nameOfTeacherSignOut=new ArrayList<String>();
   //create varible
   
   
@@ -36,5 +37,11 @@ public class Item {
   //a method that get the total number of item left  
    public int getTotalNumberOfItem(){
      return total-getNumSignOut();
+   }
+   public int getNumberInStock(){
+   return numberInStock;
+   }
+    public void setNumberInStock(int numberInStock){
+   this.numberInStock=numberInStock;
    }
 }
