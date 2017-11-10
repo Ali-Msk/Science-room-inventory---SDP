@@ -1,0 +1,40 @@
+import java.util.ArrayList;
+public class Item {
+  int total;
+  ArrayList<Integer> numberOfItemSignOut=new ArrayList<Integer>();
+  ArrayList<String> nameOfTeacherSignOut=new ArrayList<String>();
+  //create varible
+  
+  
+  //constructor
+  public Item(String name, int roomNumber, String location, int number) { 
+    //add
+  }
+  
+  
+  public  void signOut(String teacherName, int numberOfItemSignOut){
+    //add the name to name arraylist, and add the number of item sign out to signout array
+  }
+  
+  public  void signOut(String teacherName, int numberOfItemSignOut, int totalNumbers){
+    //add the name to name arraylist, and add the number of item sign out to signout array, set up the total number of item
+  }
+  
+   public void signIn(String teacherName){
+    //delete the name to name arraylist, and delete the number of item sign out to signout array
+  }
+   
+   //a method that get the total number of item sign out
+   public int getNumSignOut(){
+     int num=0;
+     for(int i=0;i<numberOfItemSignOut.size();i++){
+       num+=numberOfItemSignOut.get(i);
+     }
+     return num;
+  }
+   
+  //a method that get the total number of item left  
+   public int getTotalNumberOfItem(){
+     return total-getNumSignOut();
+   }
+}
