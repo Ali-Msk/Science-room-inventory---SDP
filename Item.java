@@ -63,14 +63,14 @@ public class Item {
 	      }
 	    }else{
 	      //else add the name to the list
-	    signOut.put( teacherName,numberOfItemSignOut);
+	    	signOut.put( teacherName,numberOfItemSignOut);
 	    }
 	  }
 	  
 	  
 	  //setter for totalAmountItemInOneLocation varible
 	  public void setTotal(int totalAmountItemInOneLocation){
-	  this.totalAmountItemInOneLocation=totalAmountItemInOneLocation;
+	  	this.totalAmountItemInOneLocation=totalAmountItemInOneLocation;
 	  }
 	  
 	  
