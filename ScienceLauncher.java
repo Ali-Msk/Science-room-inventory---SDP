@@ -33,8 +33,20 @@ public class ScienceLauncher {
 		}		
 
 		input.close();*/
-		itemList.add(new Item("Final test save to make sure everything works", "21", "1","12","12"));
-		saveToFile(itemList);
+		itemList.get(0).signOut("GHoli", 3);
+		itemList.get(0).signOut("Mr. J", 3);
+		itemList.get(0).signBack("GHoli");
+		itemList.get(0).signOut("Mr", 3);
+		itemList.get(0).signOut("MS Hi", 10);
+		itemList.get(0).signBack("Mr. J");
+
+
+
+		try {
+			new ChemGui();
+		}catch(Exception E) {}
+		
+		saveToFile(itemList);//saves to file after the program is done
 	}
 	/*
 	 * saveToFile 
@@ -88,7 +100,7 @@ public class ScienceLauncher {
 				while(!item.substring(i,i+1).equals("#")){
 					name += item.substring(i,i+1);
 					i++;
-					System.out.println("name found: " + name);
+//					System.out.println("name found: " + name);
 				}
 				i++;
 				while (!item.substring(i,i+1).equals("#")){
@@ -114,7 +126,7 @@ public class ScienceLauncher {
 
 					if(item.substring(i,i+1).equals("#")){
 						terminated= true;
-	//				System.out.println("terminated after location");
+//					System.out.println("terminated after location");
 
 					}
 					if(!terminated){
@@ -122,19 +134,19 @@ public class ScienceLauncher {
 							quantity += item.substring(i,i+1);
 							i++;
 	//						System.out.println("quantity found: " + quantity);
-
+//
 						}
 						i++;
 
 						if(item.substring(i,i+1).equals("#")){
 							terminated= true;
-	//						System.out.println("terminated after quantity");
+		//					System.out.println("terminated after quantity");
 						}
 						if(!terminated){
 							while (!item.substring(i,i+1).equals("#")){
 								numLeft += item.substring(i,i+1);
 								i++;
-//								System.out.println("numLeft found: " + numLeft);
+			//					System.out.println("numLeft found: " + numLeft);
 
 							}
 							i++;

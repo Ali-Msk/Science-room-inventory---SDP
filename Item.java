@@ -12,6 +12,7 @@ public class Item {
 	  private String location;
 	  private String equipmentName;
 	  private HashMap<String, Integer>signOut=new HashMap<String, Integer>();
+	  private ArrayList<String> signOutName; 
 	  
 	  //constructors
 	  public Item(String equipmentName, int roomNumber, String location, int totalAmountItemInOneLocation) { 
@@ -29,30 +30,42 @@ public class Item {
 		  this.equipmentName=equipmentName;
 		  this.roomNumber=roomNumber;
 	  }
-	  public Item(String name){
-		  this.equipmentName = name;
+	  public Item(String equipmentName){
+		  this.equipmentName = equipmentName;
 	  }
+	  /*
+	   * main constructor
+	   * main constructor used to create an item and save in itemList
+	   * takes in all as string and converts  
+	   * @param: all required fields in form of string 
+	   */
 	  public Item(String name, String roomNumber, String location, String total, String amountLeft){
 		 this.equipmentName = name;
 		 this.roomNumber = Integer.parseInt(roomNumber);
-		 if(!location.equals("")){
+		 if(!location.equals("") || !location.equals(null)){
 			 this.location = location;
+		 }else {
+			 this.location  = " ";
 		 }
-		 if(!total.equals("")){
+		 if(!total.equals("") && !total.equals(null)){
 			 this.totalAmountItemInOneLocation = Integer.parseInt(total);
+		 }else {
+			 this.totalAmountItemInOneLocation = 0;
 		 }
-		 if(!amountLeft.equals("")){
+		 if(!amountLeft.equals("") && !amountLeft.equals(null)){
 			 this.numLeft = Integer.parseInt(amountLeft);
 		 }
+		 signOutName = new ArrayList<String>();
 
 	  }
 	  
 	  //signout some number of item
 	  public  void signOut(String teacherName, int numberOfItemSignOut){
-	    
+		  signOutName.add(teacherName);
+		  this.numLeft -= numberOfItemSignOut;
 	    //if it has a teacher's name in the signout list, then combine two signout values to one
 	    if(signOut.containsKey(teacherName)){
-	      //if the sign out number of the teacher +numberOfItemSignOut is 0, then remove the teacher's name from the list.
+	      //if the sign out number of the teacher + numberOfItemSignOut is 0, then remove the teacher's name from the list.
 	      if(signOut.get(teacherName)==-numberOfItemSignOut){
 	        signOut.remove(teacherName);
 
@@ -67,31 +80,19 @@ public class Item {
 	    }
 	  }
 	  
-	  
-	  //setter for totalAmountItemInOneLocation varible
-	  public void setTotal(int totalAmountItemInOneLocation){
-	  	this.totalAmountItemInOneLocation=totalAmountItemInOneLocation;
-	  }
+
 	  
 	  
 	  
 	  //method for signBack
-	  public void signBack(String teacherName, int numberOfItemSignIn){
-	    
-	    //if it has that name of teacher, then work on that value, else add it to the list
-	    if(signOut.containsKey(teacherName)){
-	      
-	     if(signOut.get(teacherName)==numberOfItemSignIn){
-	        signOut.remove(teacherName);
-
-	      }else{
-	        signOut.put( teacherName,signOut.get(teacherName)-numberOfItemSignIn);
-
-	      }
-	    }else{
-	       signOut.put( teacherName,-numberOfItemSignIn);
+	  public void signBack(String teacherName){
+		this.numLeft += signOut.get(teacherName); //updates amount left 
+	    for (int i = 0; i<= signOutName.size()-1;i++) { //finds the teacher in arrayList and removes
+	    	if (signOutName.get(i).equals(teacherName)) {
+	    		signOutName.remove(i);
+	    	}
 	    }
-	    
+	    signOut.remove(teacherName);
 	  }
 	  
 	//a method that get the totalAmountItemInOneLocation number of item sign out
@@ -108,22 +109,19 @@ public class Item {
 	    
 	    return num;
 	  }
-	    
-	//a getter for the name of the equipment
+	  
+	  
+	  //getters and setters for item.java	 
+
 	  public String getEquipmentName(){
 	    return equipmentName;
 	  }
-	  //a method that get the totalAmountItemInOneLocation number of item left  
 	  public int getTotalNumberOfItem(){
-	    return totalAmountItemInOneLocation-getNumSignChange();
+	    return totalAmountItemInOneLocation;
 	  }
-	  
-	  //a method that return the total number of item in school
 	  public int getNumberInStock(){
 	    return numberInStock;
 	  }
-	  
-	  //a method that set the total number of item in school
 	  public void setNumberInStock(int numberInStock){
 	    this.numberInStock=numberInStock;
 	  }
@@ -145,5 +143,10 @@ public class Item {
 	  public void setLocation(int numLeft){
 		 this.numLeft = numLeft; 	 
 	  }
-	  
+	  public ArrayList<String> getSignOutName(){
+		  return this.signOutName;
+	  }
+	  public void setTotal(int totalAmountItemInOneLocation){
+		  this.totalAmountItemInOneLocation=totalAmountItemInOneLocation;
+	  }
 }
