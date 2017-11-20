@@ -164,21 +164,6 @@ public class ScienceLauncher {
 		
 	}
 	
-	/*
-	 * search
-	 * searches for the piece of string inputed in items(names)
-	 * @param: a string to search for and the arrayList of the items 
-	 * @return: returns a new arraylist containing all the items with the str as part of their name(not case sensitive)
-	 * @author: Ali Meshkat
-	 */
-	public static ArrayList<Item> search(String str, ArrayList<Item> items){
-		ArrayList<Item> found = new ArrayList<Item>(); // new arrayList to return 
-		for (int i = 0; i <= items.size()-1; i++){ //runs through items
-			if (items.get(i).getEquipmentName().toLowerCase().indexOf(str.toLowerCase()) != -1){ //if name contains str(not case sensitive)
-				found.add(items.get(i)); // add 
-			}
-		}
-		return found;
-	}
+	
 
 }
