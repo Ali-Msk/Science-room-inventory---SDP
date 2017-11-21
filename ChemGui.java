@@ -48,7 +48,7 @@ public class ChemGui extends JFrame {
 	private JPanel infoGrid;
 	private JPanel searchButtonGrid;
 	private JPanel searchTabGrid;// holds the enitre tab to be added to the
-									// program to make it a tab
+	// program to make it a tab
 	private JPanel infoButtonGrid;
 
 	// borderlayouts
@@ -92,14 +92,14 @@ public class ChemGui extends JFrame {
 
 	ChemGui() throws Exception {
 		JFrame myWindow = new JFrame("Contacts List");// creates a new window to
-														// work with
+		// work with
 		myWindow.setSize(1000, 555);// set size of window by 700 by 700 pixals
 		myWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // sets the
-																	// program
-																	// to close
-																	// when the
-																	// window
-																	// closes
+		// program
+		// to close
+		// when the
+		// window
+		// closes
 
 		// creating tabbed panes
 		programTab = new JTabbedPane();
@@ -171,9 +171,8 @@ public class ChemGui extends JFrame {
 
 		// vincent's code: (adding the table in)
 		// inventory part
-		String[] inventoryColumns = new String[] { "Item Name", "Room Number",
-				"Location", "Total Number", "Number Available",
-				"Who Signed It Out", "# Signed Out" };
+		String[] inventoryColumns = new String[] { "Item Name", "Room Number", "Location", "Total Number",
+				"Number Available", "Who Signed It Out", "# Signed Out" };
 		// create data
 		Object[][] inventoryData = new Object[ScienceLauncher.itemList.size()][inventoryColumns.length];
 
@@ -184,14 +183,14 @@ public class ChemGui extends JFrame {
 			inventoryData[i][3] = ScienceLauncher.itemList.get(i).getTotalNumberOfItem();
 			inventoryData[i][4] = ScienceLauncher.itemList.get(i).getNumLeft();
 			inventoryData[i][5] = ScienceLauncher.itemList.get(i).getSignOutName();
-			inventoryData[i][6] = ScienceLauncher.itemList.get(i).getTotalNumberOfItem() - ScienceLauncher.itemList.get(i).getNumLeft();
+			inventoryData[i][6] = ScienceLauncher.itemList.get(i).getTotalNumberOfItem()
+					- ScienceLauncher.itemList.get(i).getNumLeft();
 
 		}
 		// search part
 		// needed to change item placement
-		String[] searchColumns = new String[] { "Item Name", "Room Number",
-				"Location", "Total Number", "Number Available",
-				"Who Signed It Out" };
+		String[] searchColumns = new String[] { "Item Name", "Room Number", "Location", "Total Number",
+				"Number Available", "Who Signed It Out" };
 		// create data
 		Object[][] searchData = new Object[searched.size()][searchColumns.length];
 
@@ -217,8 +216,7 @@ public class ChemGui extends JFrame {
 		searchTable.setAutoCreateRowSorter(true);
 		// searchTable.setSize(600,300);
 		// for inventory tab table
-		inventoryTable.setModel(new MyTableModel(inventoryData,
-				inventoryColumns));
+		inventoryTable.setModel(new MyTableModel(inventoryData, inventoryColumns));
 		inventoryTable.setAutoCreateRowSorter(true);
 
 		// adding to grid layout
@@ -251,8 +249,7 @@ public class ChemGui extends JFrame {
 		// adding to border layout
 		// for inventory tab
 		inventoryPanel.setLayout(new BorderLayout());
-		inventoryPanel
-				.add(new JScrollPane(inventoryTable), BorderLayout.CENTER);
+		inventoryPanel.add(new JScrollPane(inventoryTable), BorderLayout.CENTER);
 		// for search tab
 		// searchBarBorder
 		searchBarBorder.setLayout(new BorderLayout());
@@ -310,149 +307,148 @@ public class ChemGui extends JFrame {
 		}
 	}
 
-	
-	
 	/*
-	 * searchButtonListener
-	 * takes the text entered and searches for items with that name and updates 
+	 * searchButtonListener takes the text entered and searches for items with that
+	 * name and updates
+	 * 
 	 * @author: Ali Meshkat
+	 * 
 	 * @date: Nov 20th
-	 * @instructor: MR.Mangat 
+	 * 
+	 * @instructor: MR.Mangat
 	 */
 	public class searchButtonListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			String searchFor = searchTextField.getText(); //takes text
-			searched = search(searchFor, ScienceLauncher.itemList); // runs the search method 
-			updateTables(); //updates the tables 
+			String searchFor = searchTextField.getText(); // takes text
+			searched = search(searchFor, ScienceLauncher.itemList); // runs the search method
+			updateTables(); // updates the tables
 		}
 
 	}
-	
+
 	/*
-	 * searchButtonListener
-	 * updates the info for the selected item 
+	 * searchButtonListener updates the info for the selected item
+	 * takks input from the other text fields to edit the info of the selected item from the list
 	 * @author: Ali Meshkat
 	 * @date: Nov 20th
-	 * @instructor: MR.Mangat 
+	 * @instructor: MR.Mangat
 	 */
 	public class replenishButtonListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println(searchTable.getSelectedColumn());
-		//	ScienceLauncher.itemList.get(searchTable.getSelectedColumn()).setEquipmentName(equipmentNameTF.getText());
-		//	ScienceLauncher.itemList.get(searchTable.getSelectedColumn()).setRoomNum(roomNumTF.getText());
-		//	ScienceLauncher.itemList.get(searchTable.getSelectedColumn()).setLocation(locationTF.getText());
-		//	ScienceLauncher.itemList.get(searchTable.getSelectedColumn()).setQuantity( quantityTF.getText());
-		//	ScienceLauncher.itemList.get(searchTable.getSelectedColumn()).setNumLeft( numInStockTF.getText());
-			//ScienceLauncher.itemList.get(searchTable.getSelectedColumn()).setNumLeft( numInStockTF.getText());
-
-		//	numInStockTF = new JTextField();
-		//	teacherSignedOutTF = new JTextField();
-		//	numSignedOutTF = new JTextField();
+			System.out.println(searchTable.getSelectedRow());
+			 ScienceLauncher.itemList.get(searchTable.getSelectedRow()).setEquipmentName(equipmentNameTF.getText());
+			 ScienceLauncher.itemList.get(searchTable.getSelectedRow()).setRoomNum(roomNumTF.getText());
+			 ScienceLauncher.itemList.get(searchTable.getSelectedRow()).setLocation(locationTF.getText());
+			 ScienceLauncher.itemList.get(searchTable.getSelectedRow()).setTotal(quantityTF.getText());
+			 System.out.println("replenished");
+			 updateTables();
 
 		}
 
 	}
-	 
 
-
-	
 	/*
-	 * searchButtonListener
-	 * shows info for the selected item 
+	 * searchButtonListener shows info for the selected item
+	 * 
 	 * @author: Ali Meshkat
+	 * 
 	 * @date: Nov 20th
-	 * @instructor: MR.Mangat 
+	 * 
+	 * @instructor: MR.Mangat
 	 */
 	public class infoButtonListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-	
-
 
 		}
 
 	}
-	
+
 	/*
-	 * addButtonListener
-	 * takes info from the textfields and uses them to create a new object 
+	 * addButtonListener takes info from the textfields and uses them to create a
+	 * new object
+	 * 
 	 * @author: Ali Meshkat
+	 * 
 	 * @date: Nov 20th
-	 * @instructor: MR.Mangat 
+	 * 
+	 * @instructor: MR.Mangat
 	 */
 	public class addButtonListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			
-			//takes text from text fields 
+
+			// takes text from text fields
 			String name = equipmentNameTF.getText();
 			String roomNum = roomNumTF.getText();
 			String location = locationTF.getText();
 			String quantity = quantityTF.getText();
 
-			ScienceLauncher.itemList.add(new Item(name,roomNum, location, quantity, quantity)); // adds to list 
-			updateTables(); //updates tables 
-			
+			ScienceLauncher.itemList.add(new Item(name, roomNum, location, quantity, quantity)); // adds to list
+			updateTables(); // updates tables
+
 		}
 
-	}	
+	}
+
 	public class takeButtonListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 
-
 		}
 
 	}
-	
+
 	public class saveButtonListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			
+
 		}
 
 	}
-	
-	
-	
-	
+
 	/*
 	 * search searches for the piece of string inputed in items(names)
+	 * 
 	 * @param: a string to search for and the arrayList of the items
+	 * 
 	 * @return: returns a new arraylist containing all the items with the str as
 	 * part of their name(not case sensitive)
+	 * 
 	 * @author: Ali Meshkat
 	 */
 	public static ArrayList<Item> search(String str, ArrayList<Item> items) {
 		ArrayList<Item> found = new ArrayList<Item>(); // new arrayList to return
+		
 		for (int i = 0; i <= items.size() - 1; i++) { // runs through items
-			if (items.get(i).getEquipmentName().toLowerCase().indexOf(str.toLowerCase()) != -1) { // if name contains str(not case sensitive)
+			if (items.get(i).getEquipmentName().toLowerCase().indexOf(str.toLowerCase()) != -1) { // if name contains
+																									// str(not case
+																									// sensitive)
 				found.add(items.get(i)); // add
 			}
 		}
 		return found;
 	}
-	
-	
+
 	/*
 	 * updateTables
-	 * updates the tables with their new values 
+	 *  updates the tables with their new values
 	 * @return: void
+	 * 
 	 * @param: none
 	 */
-	public void updateTables(){
-		//updates search table 
-		String[] searchColumns = new String[] { "Item Name", "Room Number",
-				"Location", "Total Number", "Number Available",
-				"Who Signed It Out" };
+	public void updateTables() {
+		// updates search table
+		String[] searchColumns = new String[] { "Item Name", "Room Number", "Location", "Total Number",
+				"Number Available", "Who Signed It Out" };
 		Object[][] searchData = new Object[searched.size()][searchColumns.length];
 
 		for (int i = 0; i < searched.size(); i++) {
@@ -465,13 +461,10 @@ public class ChemGui extends JFrame {
 
 		}
 		searchTable.setModel(new MyTableModel(searchData, searchColumns));
-		
-		
-		
-		//updates main table
-		String[] inventoryColumns = new String[] { "Item Name", "Room Number",
-				"Location", "Total Number", "Number Available",
-				"Who Signed It Out", "# Signed Out" };
+
+		// updates main table
+		String[] inventoryColumns = new String[] { "Item Name", "Room Number", "Location", "Total Number",
+				"Number Available", "Who Signed It Out", "# Signed Out" };
 		// create data
 		Object[][] inventoryData = new Object[ScienceLauncher.itemList.size()][inventoryColumns.length];
 
@@ -482,7 +475,8 @@ public class ChemGui extends JFrame {
 			inventoryData[i][3] = ScienceLauncher.itemList.get(i).getTotalNumberOfItem();
 			inventoryData[i][4] = ScienceLauncher.itemList.get(i).getNumLeft();
 			inventoryData[i][5] = ScienceLauncher.itemList.get(i).getSignOutName();
-			inventoryData[i][6] = ScienceLauncher.itemList.get(i).getTotalNumberOfItem() - ScienceLauncher.itemList.get(i).getNumLeft();
+			inventoryData[i][6] = ScienceLauncher.itemList.get(i).getTotalNumberOfItem()
+					- ScienceLauncher.itemList.get(i).getNumLeft();
 
 		}
 		inventoryTable = new JTable(inventoryData, inventoryColumns);
