@@ -1,0 +1,32 @@
+***************************************INSTRUCTIONS*********************************************
+Welcome to our program, SCIENCE INVENTORY. This program will aid you with the sorting and
+organization of your Science Departments inventory. These instructions are to make sure that
+your use of our program goes as smoothly as possible. These following sections will explain each
+tab and how to use it properly.
+
+
+**********Equipment Inventory***********
+This tab is to display all of the equipment in your inventory.
+The table in the tab displays the Equipment Name (the name of your
+equipment), Room Number (the room where that equipment is stored), Location
+(the location within the room where the equipment is stored), Total Number 
+(the total amount of that equipment in the department), Number Available
+(this displays the number equipment that is available for use), 
+Who Signed It Out (displays the teachers who signed out that particular piece
+of equipment), # Signed Out (displays the amount of equipment that has been signed
+out is not available for use).
+
+*******************Search***********************
+This tab does multiple functions including the searching of the whole list of equipment.
+The first function on the upper left corner is to search for the equipment, it will display
+all of the equipment with the name that corresponds to the item that was searched. The display
+below the search bar contains the equipment that was searched. The table displays the Equipment
+Name, Room Number, Total Number, Number Available, and the teacher(s) who signed out that piece of equipment.
+The buttons on the bottom have the following functions.
+Edit: This button allows the editing of the information of a piece of equipment. First the equipment that you want
+to edit needs to be selected, then on the right hand side, type in the information in the text field that you want to change.
+If you want to change the room number for example, you would select the item first and on the right hand side you would go
+to the Room Number text field and type in the new Room number and then click Edit.
+Information: This button allows you to select a piece of equipment and then display all of the information on the right hand
+side of the window. This will display all of the information and if you want to see the different teachers and how much they signed
+out you would click on the drop down menu on the right of Teacher's Signed Out
