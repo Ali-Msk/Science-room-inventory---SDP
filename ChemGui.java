@@ -143,7 +143,7 @@ public class ChemGui extends JFrame {
 		saveButton.addActionListener(new saveButtonListener());
 		// creating textfields
 		// for search tab
-		searchTextField = new JTextField("enter search");
+		searchTextField = new JTextField("Enter Search");
 		equipmentNameTF = new JTextField();
 		roomNumTF = new JTextField();
 		locationTF = new JTextField();
@@ -171,7 +171,7 @@ public class ChemGui extends JFrame {
 
 		// vincent's code: (adding the table in)
 		// inventory part
-		String[] inventoryColumns = new String[] { "Item Name", "Room Number", "Location", "Total Number",
+		String[] inventoryColumns = new String[] { "Equipment Name", "Room Number", "Location", "Total Number",
 				"Number Available", "Who Signed It Out", "# Signed Out" };
 		// create data
 		Object[][] inventoryData = new Object[ScienceLauncher.itemList.size()][inventoryColumns.length];
@@ -189,7 +189,7 @@ public class ChemGui extends JFrame {
 		}
 		// search part
 		// needed to change item placement
-		String[] searchColumns = new String[] { "Item Name", "Room Number", "Location", "Total Number",
+		String[] searchColumns = new String[] { "Equipment Name", "Room Number", "Location", "Total Number",
 				"Number Available", "Who Signed It Out" };
 		// create data
 		Object[][] searchData = new Object[searched.size()][searchColumns.length];
@@ -340,12 +340,25 @@ public class ChemGui extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.out.println(searchTable.getSelectedRow());
-			 ScienceLauncher.itemList.get(searchTable.getSelectedRow()).setEquipmentName(equipmentNameTF.getText());
-			 ScienceLauncher.itemList.get(searchTable.getSelectedRow()).setRoomNum(roomNumTF.getText());
-			 ScienceLauncher.itemList.get(searchTable.getSelectedRow()).setLocation(locationTF.getText());
-			 ScienceLauncher.itemList.get(searchTable.getSelectedRow()).setTotal(quantityTF.getText());
-			 System.out.println("replenished");
-			 updateTables();
+			if (!equipmentNameTF.getText().equals("")){
+				ScienceLauncher.itemList.get(searchTable.getSelectedRow()).setEquipmentName(equipmentNameTF.getText());
+			}
+			if (!roomNumTF.getText().equals("")){
+				ScienceLauncher.itemList.get(searchTable.getSelectedRow()).setRoomNum(roomNumTF.getText());
+			}
+			if (!locationTF.getText().equals("")){
+				ScienceLauncher.itemList.get(searchTable.getSelectedRow()).setLocation(locationTF.getText());
+			}
+			if (!quantityTF.getText().equals("")){
+				ScienceLauncher.itemList.get(searchTable.getSelectedRow()).setTotal(quantityTF.getText());
+			}
+		/*	equipmentNameTF.setText(ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getEquipmentName());
+			roomNumTF.setText("" + ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getRoomNumber());
+			locationTF.setText(ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getLocation());
+			quantityTF.setText("" + ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getTotalNumberOfItem());
+			numInStockTF.setText("" + ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getNumLeft());*/
+			System.out.println("replenished");
+			updateTables();
 
 		}
 
@@ -364,7 +377,11 @@ public class ChemGui extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-
+			equipmentNameTF.setText(ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getEquipmentName());
+			roomNumTF.setText("" + ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getRoomNumber());
+			locationTF.setText(ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getLocation());
+			quantityTF.setText("" + ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getTotalNumberOfItem());
+			numInStockTF.setText("" + ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getNumLeft());
 		}
 
 	}
@@ -372,11 +389,8 @@ public class ChemGui extends JFrame {
 	/*
 	 * addButtonListener takes info from the textfields and uses them to create a
 	 * new object
-	 * 
 	 * @author: Ali Meshkat
-	 * 
 	 * @date: Nov 20th
-	 * 
 	 * @instructor: MR.Mangat
 	 */
 	public class addButtonListener implements ActionListener {
@@ -392,6 +406,13 @@ public class ChemGui extends JFrame {
 
 			ScienceLauncher.itemList.add(new Item(name, roomNum, location, quantity, quantity)); // adds to list
 			updateTables(); // updates tables
+			equipmentNameTF.setText("");
+			roomNumTF.setText("");
+			locationTF.setText("");
+			quantityTF.setText("");
+			numInStockTF.setText("");
+
+	
 
 		}
 
@@ -440,9 +461,8 @@ public class ChemGui extends JFrame {
 
 	/*
 	 * updateTables
-	 *  updates the tables with their new values
+	 * updates the tables with their new values
 	 * @return: void
-	 * 
 	 * @param: none
 	 */
 	public void updateTables() {
@@ -458,8 +478,8 @@ public class ChemGui extends JFrame {
 			searchData[i][3] = searched.get(i).getTotalNumberOfItem();
 			searchData[i][4] = searched.get(i).getNumLeft();
 			searchData[i][5] = searched.get(i).getSignOutName();
-
 		}
+		
 		searchTable.setModel(new MyTableModel(searchData, searchColumns));
 
 		// updates main table
