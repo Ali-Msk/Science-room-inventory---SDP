@@ -121,65 +121,56 @@ public class Item {
 	public String getEquipmentName() {
 		return equipmentName;
 	}
-
 	public void setEquipmentName(String str) {
 		this.equipmentName = str;
 	}
-
 	public int getTotalNumberOfItem() {
 		return totalAmountItemInOneLocation;
 	}
-
 	public int getNumberInStock() {
 		return numberInStock;
 	}
-
 	public void setNumberInStock(int numberInStock) {
 		this.numberInStock = numberInStock;
 	}
-
 	public int getRoomNumber() {
 		return this.roomNumber;
 	}
-
 	public void setRoomNumber(int room) {
 		this.roomNumber = room;
 	}
-
 	public String getLocation() {
 		return this.location;
 	}
-
 	public void setLocation(String location) {
 		this.location = location;
 	}
-
 	public int getNumLeft() {
 		return this.numLeft;
 	}
-
 	public void setLocation(int numLeft) {
 		this.numLeft = numLeft;
 	}
-
 	public ArrayList<String> getSignOutName() {
 		return this.signOutName;
 	}
 
 	public void setTotal(String totalAmountItemInOneLocation) {
 		try {
-			this.totalAmountItemInOneLocation = Integer.parseInt(totalAmountItemInOneLocation);
-		} catch (Exception E) {
+		this.totalAmountItemInOneLocation = Integer.parseInt(totalAmountItemInOneLocation);
+		}catch(Exception E) {
 			System.out.println("Number available cannot contain letters");
 		}
 	}
-
+	
 	public void setRoomNum(String roomNum) {
 		try {
 			this.roomNumber = Integer.parseInt(roomNum);
-		} catch (Exception E) {
+		}catch(Exception E) {
 			System.out.println("Room number cannot contain letters");
 		}
 	}
 
+	
+	
 }

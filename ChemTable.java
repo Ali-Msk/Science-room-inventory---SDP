@@ -1,9 +1,11 @@
+
+
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.*;
 import java.util.ArrayList;
-public class ChemTable {
-	 JTable tabe;
+class ChemTable extends JFrame {
+	  JTable tabe;
 	  public ChemTable() {
 	    
 	    
@@ -30,10 +32,10 @@ public class ChemTable {
 	        
 	       table.setModel(new MyTableModel(data, columns));
 	       table.setAutoCreateRowSorter(true);
-	//        this.add(new JScrollPane(table));
-	//        this.setTitle("ChemTable");
-	//        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
-	  //      this.setVisible(true);
+	        this.add(new JScrollPane(table));
+	        this.setTitle("ChemTable");
+	        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+	        this.setVisible(true);
 	    }
 	  
 
@@ -50,3 +52,4 @@ public class ChemTable {
 	   }
 	}
 }
+
