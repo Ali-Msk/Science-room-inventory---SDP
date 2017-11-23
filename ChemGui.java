@@ -2,13 +2,13 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
 
+import javax.swing.Box;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
@@ -92,6 +92,12 @@ public class ChemGui extends JFrame {
 	private JLabel numInStockL;
 	private JLabel teacherSignedOutL;
 	private JLabel numSignedOutL;
+	private JLabel signedOutInfo;
+	
+	  //creating JComboBox
+	  //for search page
+	  private JComboBox teacherSearchCB;
+	  String[] teacherSearch = {"A", "B", "C", "D", "E", "F" };// should be replaced with the list of teachers from the array
 
 	ChemGui() throws Exception {
 		JFrame myWindow = new JFrame("Contacts List");// creates a new window to
@@ -115,6 +121,9 @@ public class ChemGui extends JFrame {
 		// for search tab
 		// for inventory tab
 		inventoryPanel = new JPanel();
+		
+	    //creating JComboBoxes
+	    teacherSearchCB = new JComboBox(teacherSearch);
 
 		// creating grid layout
 		mainPanel = new JPanel(new GridLayout(1, 1));
@@ -161,9 +170,10 @@ public class ChemGui extends JFrame {
 		roomNumL = new JLabel(" Room Number: ");
 		locationL = new JLabel(" Location: ");
 		quantityL = new JLabel(" Total Quantity: ");
-		numInStockL = new JLabel(" Number Available: ");
+		numInStockL = new JLabel(" Number in Stock: ");
 		teacherSignedOutL = new JLabel(" Teacher's Signed Out: ");
 		numSignedOutL = new JLabel(" Number Signed Out: ");
+		signedOutInfo = new JLabel(" ");
 
 		// creating border layout
 
@@ -236,9 +246,9 @@ public class ChemGui extends JFrame {
 		infoGrid.add(numInStockL);
 		infoGrid.add(numInStockTF);
 		infoGrid.add(teacherSignedOutL);
-		infoGrid.add(teacherSignedOutTF);
+		infoGrid.add(teacherSearchCB);
 		infoGrid.add(numSignedOutL);
-		infoGrid.add(numSignedOutTF);
+		infoGrid.add(signedOutInfo);
 
 		// search button grid
 		searchButtonGrid.add(replenishButton);
@@ -310,7 +320,7 @@ public class ChemGui extends JFrame {
 		}
 	}
 
-	/*
+	/**
 	 * searchButtonListener takes the text entered and searches for items with that
 	 * name and updates
 	 * 
@@ -322,7 +332,7 @@ public class ChemGui extends JFrame {
 	 */
 	public class searchButtonListener implements ActionListener {
 
-		@Override
+		//@Override
 		public void actionPerformed(ActionEvent e) {
 			String searchFor = searchTextField.getText(); // takes text
 			searched = search(searchFor, ScienceLauncher.itemList); // runs the search method
@@ -331,59 +341,43 @@ public class ChemGui extends JFrame {
 
 	}
 
-	/*
-	 * searchButtonListener updates the info for the selected item takks input from
-	 * the other text fields to edit the info of the selected item from the list
-	 * 
+	/**
+	 * searchButtonListener updates the info for the selected item
+	 * takks input from the other text fields to edit the info of the selected item from the list
 	 * @author: Ali Meshkat
-	 * 
 	 * @date: Nov 20th
-	 * 
 	 * @instructor: MR.Mangat
 	 */
 	public class replenishButtonListener implements ActionListener {
 
-		@Override
+		//@Override
 		public void actionPerformed(ActionEvent e) {
 			System.out.println(searchTable.getSelectedRow());
-			//sets the selected attributes to the txt fields if not empty 
-			if (!equipmentNameTF.getText().equals("")) {
+			if (!equipmentNameTF.getText().equals("")){
 				ScienceLauncher.itemList.get(searchTable.getSelectedRow()).setEquipmentName(equipmentNameTF.getText());
 			}
-			if (!roomNumTF.getText().equals("")) {
+			if (!roomNumTF.getText().equals("")){
 				ScienceLauncher.itemList.get(searchTable.getSelectedRow()).setRoomNum(roomNumTF.getText());
 			}
-			if (!locationTF.getText().equals("")) {
+			if (!locationTF.getText().equals("")){
 				ScienceLauncher.itemList.get(searchTable.getSelectedRow()).setLocation(locationTF.getText());
 			}
-			if (!quantityTF.getText().equals("")) {
+			if (!quantityTF.getText().equals("")){
 				ScienceLauncher.itemList.get(searchTable.getSelectedRow()).setTotal(quantityTF.getText());
 			}
-			//resets text fields
-			equipmentNameTF.setText("");
-			roomNumTF.setText("");
-			locationTF.setText("");
-			quantityTF.setText("");
-			numInStockTF.setText("");
-			
-			/*
-			 * equipmentNameTF.setText(ScienceLauncher.itemList.get(searchTable.
-			 * getSelectedRow()).getEquipmentName()); roomNumTF.setText("" +
-			 * ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getRoomNumber());
-			 * locationTF.setText(ScienceLauncher.itemList.get(searchTable.getSelectedRow())
-			 * .getLocation()); quantityTF.setText("" +
-			 * ScienceLauncher.itemList.get(searchTable.getSelectedRow()).
-			 * getTotalNumberOfItem()); numInStockTF.setText("" +
-			 * ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getNumLeft());
-			 */
+		/*	equipmentNameTF.setText(ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getEquipmentName());
+			roomNumTF.setText("" + ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getRoomNumber());
+			locationTF.setText(ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getLocation());
+			quantityTF.setText("" + ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getTotalNumberOfItem());
+			numInStockTF.setText("" + ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getNumLeft());*/
 			System.out.println("replenished");
-			updateTables(); //updates tables
-			saveToFile(ScienceLauncher.itemList);//saves changes to file
+			updateTables();
+
 		}
 
 	}
 
-	/*
+	/**
 	 * searchButtonListener shows info for the selected item
 	 * 
 	 * @author: Ali Meshkat
@@ -393,7 +387,8 @@ public class ChemGui extends JFrame {
 	 * @instructor: MR.Mangat
 	 */
 	public class infoButtonListener implements ActionListener {
-		@Override
+
+		//@Override
 		public void actionPerformed(ActionEvent e) {
 			equipmentNameTF.setText(ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getEquipmentName());
 			roomNumTF.setText("" + ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getRoomNumber());
@@ -401,21 +396,21 @@ public class ChemGui extends JFrame {
 			quantityTF.setText("" + ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getTotalNumberOfItem());
 			numInStockTF.setText("" + ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getNumLeft());
 		}
+
 	}
 
-	/*
+	/**
 	 * addButtonListener takes info from the textfields and uses them to create a
 	 * new object
-	 * 
 	 * @author: Ali Meshkat
-	 * 
 	 * @date: Nov 20th
-	 * 
 	 * @instructor: MR.Mangat
 	 */
 	public class addButtonListener implements ActionListener {
-		@Override
+
+		//@Override
 		public void actionPerformed(ActionEvent e) {
+
 			// takes text from text fields
 			String name = equipmentNameTF.getText();
 			String roomNum = roomNumTF.getText();
@@ -424,30 +419,70 @@ public class ChemGui extends JFrame {
 
 			ScienceLauncher.itemList.add(new Item(name, roomNum, location, quantity, quantity)); // adds to list
 			updateTables(); // updates tables
-			//clears txt fields
 			equipmentNameTF.setText("");
 			roomNumTF.setText("");
 			locationTF.setText("");
 			quantityTF.setText("");
 			numInStockTF.setText("");
-			saveToFile(ScienceLauncher.itemList);//saves changes to file
+
+	
+
 		}
+
 	}
 
 	public class takeButtonListener implements ActionListener {
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-
+		  
+		  
+		  public void actionPerformed(ActionEvent arg0) {
+		    //should only activate if an item is selected and the take button is clicked
+		    Object[] options = { "Sign In", "Sign Out" };
+		    int selection = JOptionPane.showOptionDialog(null, "Are you signing some equipment in or out", "Equipment Inventory",JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,null, options, options[0]);
+		    System.out.println("Selection: " + selection);
+		    if (selection == 0) {
+		      String[] signIn = { "A", "B", "C", "D", "E", "F" };
+		      String input = (String) JOptionPane.showInputDialog(null, "Select your name and it will sign in all of your equipment.", "Equipment Inventory", JOptionPane.INFORMATION_MESSAGE, null, signIn, signIn[1]);
+		      System.out.println(input);
+		    }else if(selection == 1){
+		      String[] signOut = {"A", "B", "C", "D", "E", "F" };// should be replaced with the list of teachers from the array
+		      JComboBox teacherNames = new JComboBox(signOut);
+		      JTextField amount = new JTextField(5);
+		      JPanel myPanel = new JPanel();
+		      myPanel.add(new JLabel("Amount: "));
+		      myPanel.add(amount);
+		      myPanel.add(Box.createHorizontalStrut(15)); // a spacer
+		      myPanel.add(new JLabel("Name: "));
+		      myPanel.add(teacherNames);
+		      int result = JOptionPane.showConfirmDialog(null, myPanel, "Sign Out", JOptionPane.OK_CANCEL_OPTION);
+		      if (result == JOptionPane.OK_OPTION) {
+		        System.out.println("Teacher Name: " +signOut[teacherNames.getSelectedIndex()] );//+ petList.setSelectedIndex(result));
+		        System.out.println("Amount Value: " + amount.getText());
+		      }
+		      
+		      //Create the combo box, select item at index 4.
+		      //Indices start at 0, so 4 specifies the pig.
+		      //JComboBox petList = new JComboBox(signOut);
+		      //petList.setSelectedIndex(4);
+		      //petList.addActionListener(this);
+		    }
+		    
+		    
+		  }
+		  
 		}
-
-	}
-
+	
+	/**
+	 * saveButtonListener
+	 * saves the added or changed items to the .txt file
+	 * @author Israel Shpilman
+	 * @date 11/22/2017
+	 *
+	 */
 	public class saveButtonListener implements ActionListener {
 
-		@Override
+		//@Override
 		public void actionPerformed(ActionEvent e) {
-
+			ScienceLauncher.saveToFile(ScienceLauncher.itemList);
 		}
 
 	}
@@ -464,22 +499,21 @@ public class ChemGui extends JFrame {
 	 */
 	public static ArrayList<Item> search(String str, ArrayList<Item> items) {
 		ArrayList<Item> found = new ArrayList<Item>(); // new arrayList to return
-
+		
 		for (int i = 0; i <= items.size() - 1; i++) { // runs through items
 			if (items.get(i).getEquipmentName().toLowerCase().indexOf(str.toLowerCase()) != -1) { // if name contains
-				// str(not case
-				// sensitive)
+																									// str(not case
+																									// sensitive)
 				found.add(items.get(i)); // add
 			}
 		}
 		return found;
 	}
 
-	/*
-	 * updateTables updates the tables with their new values
-	 * 
+	/**
+	 * updateTables
+	 * updates the tables with their new values
 	 * @return: void
-	 * 
 	 * @param: none
 	 */
 	public void updateTables() {
@@ -496,7 +530,7 @@ public class ChemGui extends JFrame {
 			searchData[i][4] = searched.get(i).getNumLeft();
 			searchData[i][5] = searched.get(i).getSignOutName();
 		}
-
+		
 		searchTable.setModel(new MyTableModel(searchData, searchColumns));
 
 		// updates main table
@@ -512,38 +546,12 @@ public class ChemGui extends JFrame {
 			inventoryData[i][3] = ScienceLauncher.itemList.get(i).getTotalNumberOfItem();
 			inventoryData[i][4] = ScienceLauncher.itemList.get(i).getNumLeft();
 			inventoryData[i][5] = ScienceLauncher.itemList.get(i).getSignOutName();
-			inventoryData[i][6] = ScienceLauncher.itemList.get(i).getTotalNumberOfItem() - ScienceLauncher.itemList.get(i).getNumLeft();
+			inventoryData[i][6] = ScienceLauncher.itemList.get(i).getTotalNumberOfItem()
+					- ScienceLauncher.itemList.get(i).getNumLeft();
 
 		}
-		inventoryTable = new JTable(inventoryData, inventoryColumns);
+		inventoryTable.setModel(new MyTableModel(inventoryData, inventoryColumns));
 
-	}
-	
-	/*
-	 * saveToFile 
-	 * is run at the end of the program to save the3 modified itemList to the file for future use
-	 * @param: arraylist of items
-	 * @return: void
-	 * @author: Ali Meshkat 
-	 */
-	public static void saveToFile(ArrayList<Item> itemList){
-		try {
-			PrintWriter output = new PrintWriter(new File("Equipment.txt"));	
-			for (int i = 0 ; i <= ScienceLauncher.itemList.size()-1; i++){
-				output.print(ScienceLauncher.itemList.get(i).getEquipmentName() + "#");
-				output.print(ScienceLauncher.itemList.get(i).getRoomNumber() + "#");
-				output.print(ScienceLauncher.itemList.get(i).getLocation() + "#");
-				output.print(ScienceLauncher.itemList.get(i).getTotalNumberOfItem() + "#");
-				output.println(ScienceLauncher.itemList.get(i).getNumLeft() + "##" );
-
-			}
-			output.close();
-			System.out.println("updatedddddddd");
-		}catch(IOException error){
-			System.out.println("output IO error");
-		}catch(Exception E) {
-			System.out.println("ERROR");
-		}
 	}
 
 }
