@@ -12,27 +12,32 @@ import java.io.IOException;
 
 public class ScienceLauncher {
 	static ArrayList<Item> itemList ;
+	static ArrayList<String> teacherName ;
+	static ArrayList<String> allTeacherInSchool ;
+
 	public static void main(String[] args) {
 		//System.out.println(Integer.parseInt("null"));
 		itemList  = new ArrayList<Item>();
 		System.out.println("reading started");
 		getItems(itemList);
 		
+		teacherName = new ArrayList<String>();
+		allTeacherInSchool = new ArrayList<String>();
+
+		teacherName.add("l;akjdf");
+		teacherName.add("l;1211");
+		teacherName.add("l;4444444444");
 		
+		allTeacherInSchool.add("l;555");
+		allTeacherInSchool.add("l;6666");
+		allTeacherInSchool.add("l;77777");
+		allTeacherInSchool.add("l;88888");
+		allTeacherInSchool.add("l;9999");
+
 		for (int i = 0; i <= itemList.size()-1; i++){
 			System.out.println(itemList.get(i).getEquipmentName());
 		}
-	/*	Scanner input = new Scanner (System.in);
-	 	ArrayList<Item> searched;
-		System.out.println("search for?");
-		String searchFor = input.nextLine();
-		
-		searched = search(searchFor, itemList);
-		for (int i = 0; i<= searched.size()-1;i++){
-			System.out.println(searched.get(i).getEquipmentName());
-		}		
 
-		input.close();*/
 		itemList.get(0).signOut("GHoli", 3);
 		itemList.get(0).signOut("Mr. J", 3);
 		itemList.get(0).signBack("GHoli");
@@ -65,8 +70,6 @@ public class ScienceLauncher {
 				output.print(itemList.get(i).getTotalNumberOfItem() + "#");
 				output.println(itemList.get(i).getNumLeft() + "##" );
 
-
-				
 			}
 			output.close();
 			
@@ -158,9 +161,46 @@ public class ScienceLauncher {
 			}
 			input.close();
 		}catch(IOException FileNotFoundException){ //checks for io exception
-			System.out.println("ERROR: input file not found");//messages
+			System.out.println("ERROR: item input file not found");//messages
 			FileNotFoundException.printStackTrace(); //prints error details to the console 
 		}
+		
+		
+	/*	try {
+			Scanner input = new Scanner(new File("Teachers.txt"));
+			String line;
+			int i = 0;
+			String name = "";
+			String amount = "";
+			boolean lineEnded = false;
+			while(input.hasNext()){
+				line = input.nextLine();
+				while(!line.substring(i,i+1).equals("#")) { //finds the teacher 
+					name += line.substring(i,i+1);
+					i++;
+				}
+				i++;
+				while(!line.substring(i,i+1).equals("#")) {//finds the number the teacher took
+					amount += line.substring(i,i+1);
+					i++;
+				}
+				i++;
+				
+				if (!line.substring(i,i+1).equals("#")) {
+					
+				}else {
+					lineEnded = true;
+				}
+			}
+			input.close(); // closes scanner
+		}catch(IOException FileNotFoundException){ //checks for io exception
+			System.out.println("ERROR: item input file not found");//messages
+			FileNotFoundException.printStackTrace(); //prints error details to the console 
+		}*/
+		
+		
+		
+		
 		
 	}
 	
