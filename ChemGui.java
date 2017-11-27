@@ -25,9 +25,11 @@ import javax.swing.JTextField;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
-
 import java.util.ArrayList;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Dimension;
+
 
 public class ChemGui extends JFrame {
 	// ///////////////////NONE GUI STUFF//////////////////////////////
@@ -135,7 +137,7 @@ public class ChemGui extends JFrame {
 
 	ChemGui() throws Exception {
 
-		JFrame myWindow = new JFrame("Contacts List");// creates a new window to
+		JFrame myWindow = new JFrame("Equipment Inventory");// creates a new window to
 		// work with
 		myWindow.setSize(1000, 555);// set size of window by 700 by 700 pixals
 		myWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // sets the
@@ -176,10 +178,10 @@ public class ChemGui extends JFrame {
 		// creating buttons
 		// for search tab
 		searchButton = new JButton("Search");
-		replenishButton = new JButton("Replenish");
+		replenishButton = new JButton("Edit");
 		infoButton = new JButton("Information");
 		addButton = new JButton("Add");
-		saveButton = new JButton("Save Information");
+		saveButton = new JButton("Delete");
 		takeButton = new JButton("Sign Out/ Sign In");
 
 		// creating action listeners
@@ -189,7 +191,7 @@ public class ChemGui extends JFrame {
 		infoButton.addActionListener(new infoButtonListener());
 		addButton.addActionListener(new addButtonListener());
 		takeButton.addActionListener(new takeButtonListener());
-		saveButton.addActionListener(new saveButtonListener());
+		saveButton.addActionListener(new DeleteButtonListener());
 		// creating textfields
 		// for search tab
 		searchTextField = new JTextField("");
@@ -221,12 +223,7 @@ public class ChemGui extends JFrame {
 
 		
 		
-		
-		
-		
-		
-		
-		
+
 		// vincent's code: (adding the table in)
 		// inventory part
 		String[] inventoryColumns = new String[] { "Equipment Name", "Room Number", "Location", "Total Number",
@@ -267,7 +264,8 @@ public class ChemGui extends JFrame {
 		searchTable = new JTable(searchData, searchColumns);
 		searchTable.addMouseListener(new MyMouseListener2()); //adds a mouse listerner to search table
 		searchTable.setFont(new Font ("Dialog", Font.BOLD, 15));
-		searchTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+
+		//searchTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 		//searchTable.getColumn(1).setPreferredWidth(100);    
 
 		// creating the inventory tab table
@@ -295,8 +293,10 @@ public class ChemGui extends JFrame {
 		// for inventory tab table
 		inventoryTable.setModel(new MyTableModel(inventoryData, inventoryColumns));
 		inventoryTable.setAutoCreateRowSorter(true);
+		
+		inventoryTable.setFont(new Font ("Dialog", Font.BOLD, 12));
 
-		TableColumnModel columModel2 = inventoryTable.getColumnModel(); //sets size 
+		TableColumnModel columModel2 = inventoryTable.getColumnModel(); //sets sizes for columns 
 		columModel2.getColumn(0).setPreferredWidth(225); 
 		columModel2.getColumn(5).setPreferredWidth(225);     
 
@@ -366,9 +366,10 @@ public class ChemGui extends JFrame {
 		searchPanel.add(searchTabGrid);
 
 		// adding to tab
-		programTab.addTab("Equipment Inventory", inventoryPanel);
+		
 		programTab.add("Search", searchPanel);
-
+		programTab.addTab("Equipment Inventory", inventoryPanel);
+		
 		signInButton = new JButton("Add Teacher");
 		signOutButton = new JButton("Delete Teacher");
 
@@ -615,14 +616,32 @@ public class ChemGui extends JFrame {
 		}
 
 	}
-
-	public class saveButtonListener implements ActionListener {
+	
+	/*
+	 * DeleteButtonListener 
+	 * deletes the selected item from the list of equipments
+	 * @author: Ali Meshkat
+	 * @date: Nov 20th
+	 * @instructor: MR.Mangat
+	 */
+	public class DeleteButtonListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-
+			if(searchTextField.getText().equals("")){ //if search is empty 
+				ScienceLauncher.itemList.remove(searchTable.getSelectedRow()); //remove that index
+			}else{ //if something is search(original table isn not being displayed) (affecs selected row)
+				String name= "";
+				name = searchTextField.getText();
+				for (int i = 0; i <= ScienceLauncher.itemList.size()-1; i ++){ //runs through arrayLIst 
+					if(ScienceLauncher.itemList.get(i).getEquipmentName().equals(name)){ //looks for the name 
+						ScienceLauncher.itemList.remove(i); //removes 
+					}
+				}
+			}
+			updateTables(); //refreshes
+			saveToFile(ScienceLauncher.itemList);//saves to file
 		}
-
 	}
 
 	/*
@@ -669,8 +688,17 @@ public class ChemGui extends JFrame {
 			searchData[i][4] = searched.get(i).getNumLeft();
 			searchData[i][5] = searched.get(i).getSignOutName();
 		}
-		searchTable.setModel(new MyTableModel(searchData, searchColumns));
+		
 
+		
+		searchTable.setModel(new MyTableModel(searchData, searchColumns));
+		//is used to set sizes for each column 
+		TableColumnModel columModel = searchTable.getColumnModel();
+		columModel.getColumn(0).setPreferredWidth(175);     
+		columModel.getColumn(1).setPreferredWidth(12);    
+		columModel.getColumn(2).setPreferredWidth(12);    
+		columModel.getColumn(3).setPreferredWidth(12);
+		columModel.getColumn(4).setPreferredWidth(12);
 		// updates main table
 		String[] inventoryColumns = new String[] { "Item Name", "Room Number", "Location", "Total Number",
 				"Number Available", "Who Signed It Out", "# Signed Out" };
@@ -688,8 +716,10 @@ public class ChemGui extends JFrame {
 					- ScienceLauncher.itemList.get(i).getNumLeft();
 
 		}
+  
 		inventoryTable = new JTable(inventoryData, inventoryColumns);
 
+		
 		//searchTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 
 	}
