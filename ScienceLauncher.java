@@ -72,6 +72,14 @@ public class ScienceLauncher {
 		itemList.get(0).signOut("MS Hi", 10);
 		itemList.get(0).signBack("Mr. J");
 
+		
+		
+		
+		getTeachers();
+		getAllTeachersFile();
+		getScienceTeachersFile();
+		
+		
 		try {
 			new ChemGui();
 		} catch (Exception E) {
@@ -82,20 +90,17 @@ public class ScienceLauncher {
 		saveToFile(itemList);// saves to file after the program is done
 	}
 
-	/*
+	/**
 	 * saveToFile is run at the end of the program to save the3 modified
 	 * itemList to the file for future use
-	 * 
 	 * @param: arraylist of items
-	 * 
 	 * @return: void
-	 * 
 	 * @author: Ali Meshkat
 	 */
 	public static void saveToFile(ArrayList<Item> itemList) {
 		try {
 			PrintWriter output = new PrintWriter(new File("Equipment.txt"));
-			for (int i = 0; i <= itemList.size() - 1; i++) {
+			for (int i = 0; i <= itemList.size() - 1; i++){
 				output.print(itemList.get(i).getEquipmentName() + "#");
 				output.print(itemList.get(i).getRoomNumber() + "#");
 				output.print(itemList.get(i).getLocation() + "#");
@@ -110,13 +115,11 @@ public class ScienceLauncher {
 		}
 	}
 
-	/*
-	 * getItems gets all the info for the items from the text file
-	 * 
+	/**
+	 * getItems 
+	 * gets all the info for the items from the text file
 	 * @param: arrylist of items which is where everything will saved to
-	 * 
 	 * @return: void
-	 * 
 	 * @author: Ali Meshkat
 	 */
 	public static void getItems(ArrayList<Item> itemList) {
@@ -202,15 +205,138 @@ public class ScienceLauncher {
 
 	}
 
-	public static void getTeachers(ArrayList<Item> items, int i){
+	/**
+	 * getTeachers
+	 * reads two files to find the teachers that have signed out each equipment 
+	 * and to find how many each teacher has signed ouut
+	 * @param: none
+	 * @return: void
+	 * @author: Ali Meshkat
+	 */
+	public static void getTeachers(){
+		
+		//finds the names of the teachers that have signed out each equiment
+		//the line number is the item
 		try{
-			Scanner input = new Scanner (new File ("Teachers.txt"));
-			String line = input.nextLine();
-			
+			Scanner input = new Scanner (new File ("SignOutTeacherNames.txt"));
+			int lineNum = -1;
+			while (input.hasNext()) {
+				lineNum++; //keeps track of line num
+				String item = input.nextLine(); //gets next line
+				int i = 0; //index of line
+				String name = ""; //the current name found
+				boolean terminated = false; //end of line or not
+				while (!terminated) {
+					
+					while (!(item.substring(i, i + 1).equals("#"))) {
+						name += item.substring(i, i + 1);
+						i++;
+											                                                                                                                      System.out.println("name found: " + name);
+					}
+					
+					itemList.get(lineNum).getSignOutName().add(name); //adds the teacher to item
+				    name = "";
+					i++;
+					if (item.substring(i, i+1).equals("#")) { //if end of line
+						terminated = true;
+						System.out.println("termninated");
+					}
+				}
+			}
+			input.close();
 		} catch (IOException FileNotFoundException) { // checks for io exception
 			System.out.println("ERROR:  teachers input file not found");// messages
 			FileNotFoundException.printStackTrace(); // prints error details to
 														// the console
+		}
+		
+		
+		//finds the quantity each teacher has taken
+		//each line is the next item
+		//each # is the next teacher in the lline 
+		// ## is the end of the line
+		try{
+			Scanner input = new Scanner (new File ("SignOutValues.txt"));
+			int lineNum = -1;
+			while (input.hasNext()) {
+				lineNum++; //keeps track of line num
+				String line = input.nextLine(); //gets next line
+				int i = 0; //index of line
+				
+				//stores the number of teacher that the program is on 
+				//used to find the name by using it as the input to 
+				//signOutName arrayList
+				int teacherNum = 0; 
+				
+				String amount = ""; //the current name found
+				boolean terminated = false; //end of line or not
+				while (!terminated) {
+					while (!line.substring(i, i + 1).equals("#")) {
+						amount += line.substring(i, i + 1);
+						i++;
+					    System.out.println("name found: " + amount);
+					}					
+					if (!amount.equals("")) {//if not empty
+						itemList.get(lineNum).signOut(itemList.get(lineNum).getSignOutName().get(teacherNum), Integer.parseInt(amount));//uses the signoutName to sign out the item by the teacher with the amount just 
+					}																						//fetched from the file 
+					i++;
+					teacherNum++;
+					if (line.substring(i, i+1).equals("#")) { //if end of line
+						terminated = true;
+					}
+				}
+			}
+			input.close(); //closes input
+		} catch (IOException FileNotFoundException) { // checks for io exception
+			System.out.println("ERROR: signOut amounts input file not found");// messages
+			FileNotFoundException.printStackTrace(); // prints error details to the console											
+		}
+		
+		
+
+		
+
+		
+	}
+	
+	
+	/**
+	 * getAllTeachersFile
+	 * reads a file for alll the reachers in the school]
+	 * @param: none
+	 * @return: void
+	 * @author: Ali Meshkat
+	 */
+	public static void getAllTeachersFile() {
+		try {
+			Scanner input = new Scanner (new File ("AllTeachers.txt"));
+			while(input.hasNext()) {
+				Item.getAllTeacherNames().add(input.nextLine()); //gets line and add to teachers
+			}
+			input.close();
+		}catch (IOException FileNotFoundException) { // checks for io exception
+			System.out.println("ERROR: AllTeacher input file not found");// messages
+			FileNotFoundException.printStackTrace(); // prints error details to the console											
+		}
+	}
+	
+	/**
+	 * getAllTeachersFile
+	 * reads a file for all the teachers in the science dept.
+	 * @param: none
+	 * @return: void
+	 * @author: Ali Meshkat
+	 */
+	public static void getScienceTeachersFile() {
+		try {
+			Scanner input = new Scanner (new File ("ScienceTeachers.txt"));
+			while(input.hasNext()) {
+				Item.getScienceTeacherNames().add(input.nextLine()); //gets line and add to science teachers
+			}
+			input.close();
+		}catch (IOException FileNotFoundException) { // checks for io exception
+			System.out.println("ERROR: ScienceTeachers input file not found");// messages
+			FileNotFoundException.printStackTrace(); // prints error details to the console											
 		}
 	}
 	
@@ -223,16 +349,4 @@ public class ScienceLauncher {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
 }
-
-
-
-
