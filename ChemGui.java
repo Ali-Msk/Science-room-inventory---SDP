@@ -96,7 +96,6 @@ public class ChemGui extends JFrame {
 	private JButton searchButton;
 	private JButton replenishButton;
 	private JButton addButton;
-	private JButton infoButton;
 	private JButton saveButton;
 	private JButton takeButton;
 
@@ -179,16 +178,14 @@ public class ChemGui extends JFrame {
 		// for search tab
 		searchButton = new JButton("Search");
 		replenishButton = new JButton("Edit");
-		infoButton = new JButton("Information");
 		addButton = new JButton("Add");
 		saveButton = new JButton("Delete");
-		takeButton = new JButton("Sign Out/ Sign In");
+		takeButton = new JButton("Take/Return Equipment");
 
 		// creating action listeners
 		// for search tab
 		searchButton.addActionListener(new searchButtonListener());
 		replenishButton.addActionListener(new replenishButtonListener());
-		infoButton.addActionListener(new infoButtonListener());
 		addButton.addActionListener(new addButtonListener());
 		takeButton.addActionListener(new takeButtonListener());
 		saveButton.addActionListener(new DeleteButtonListener());
@@ -321,7 +318,6 @@ public class ChemGui extends JFrame {
 
 		// search button grid
 		searchButtonGrid.add(replenishButton);
-		searchButtonGrid.add(infoButton);
 		searchButtonGrid.add(takeButton);
 
 		// info button grid
@@ -522,34 +518,13 @@ public class ChemGui extends JFrame {
 
 	}
 
-	/*
-	 * searchButtonListener shows info for the selected item
-	 * 
-	 * @author: Ali Meshkat
-	 * 
-	 * @date: Nov 20th
-	 * 
-	 * @instructor: MR.Mangat
-	 */
-	public class infoButtonListener implements ActionListener {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			equipmentNameTF.setText(searched.get(searchTable.getSelectedRow()).getEquipmentName());
-			roomNumTF.setText("" + searched.get(searchTable.getSelectedRow()).getRoomNumber());
-			locationTF.setText(searched.get(searchTable.getSelectedRow()).getLocation());
-			quantityTF.setText("" + searched.get(searchTable.getSelectedRow()).getTotalNumberOfItem());
-			numInStockTF.setText("" + searched.get(searchTable.getSelectedRow()).getNumLeft());
-		}
-	}
+	
 
 	/*
 	 * addButtonListener takes info from the textfields and uses them to create a
 	 * new object
-	 * 
 	 * @author: Ali Meshkat
-	 * 
 	 * @date: Nov 20th
-	 * 
 	 * @instructor: MR.Mangat
 	 */
 	public class addButtonListener implements ActionListener {
@@ -576,21 +551,46 @@ public class ChemGui extends JFrame {
 	public class takeButtonListener implements ActionListener {
 
 		public void actionPerformed(ActionEvent arg0) {
-			// should only activate if an item is selected and the take button is clicked
-			Object[] options = { "Sign In", "Sign Out" };
+	/*		// should only activate if an item is selected and the take button is clicked
+			Object[] options = { "Borrowing", "Returning" };
+			String input = "";
 			int selection = JOptionPane.showOptionDialog(null, "Are you signing some equipment in or out",
 					"Equipment Inventory", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options,
 					options[0]);
 			System.out.println("Selection: " + selection);
-			if (selection == 0) {
-				String[] signIn = { "A", "B", "C", "D", "E", "F" };
-				String input = (String) JOptionPane.showInputDialog(null,
-						"Select your name and it will sign in all of your equipment.", "Equipment Inventory",
-						JOptionPane.INFORMATION_MESSAGE, null, signIn, signIn[1]);
-				System.out.println(input);
-			} else if (selection == 1) {
-				String[] signOut = { "A", "B", "C", "D", "E", "F" };// should be replaced with the list of teachers from
-																	// the array
+			if (selection == 1) {
+				ArrayList<String> teachers = new ArrayList<String>();
+				teachers = Item.getSignOutName();
+				Object[] signIn = teachers.toArray();
+				if (signIn.length >= 2) {
+					input = (String) JOptionPane.showInputDialog(null,
+							"Select your name and it will sign in all of your equipment.", "Equipment Inventory",
+							JOptionPane.INFORMATION_MESSAGE, null, signIn, signIn[1]);
+					System.out.println(input);
+					if (input == null) {
+
+					} else if (input != null) {
+						Item.signBack((String) input);
+					}
+				} else if (signIn.length == 1) {
+					input = (String) JOptionPane.showInputDialog(null,
+							"Select your name and it will sign in all of your equipment.", "Equipment Inventory",
+							JOptionPane.INFORMATION_MESSAGE, null, signIn, signIn[0]);
+					System.out.println(input);
+					if (input == null) {
+
+					} else if (input != null) {
+						Item.signBack((String) input);
+					}
+				} else {
+					JOptionPane.showMessageDialog(null, "No teacher has taken anything to return");
+				}
+			} else if (selection == 0) {
+				// String[] signOut = {"A", "B", "C", "D", "E", "F" };// should be replaced with
+				// the list of teachers from the array
+				ArrayList<String> teachers = new ArrayList<String>();
+				teachers = Item.getTeacherName();
+				Object[] signOut = teachers.toArray();
 				JComboBox teacherNames = new JComboBox(signOut);
 				JTextField amount = new JTextField(5);
 				JPanel myPanel = new JPanel();
@@ -599,11 +599,14 @@ public class ChemGui extends JFrame {
 				myPanel.add(Box.createHorizontalStrut(15)); // a spacer
 				myPanel.add(new JLabel("Name: "));
 				myPanel.add(teacherNames);
+				System.out.println("Working");
 				int result = JOptionPane.showConfirmDialog(null, myPanel, "Sign Out", JOptionPane.OK_CANCEL_OPTION);
+				System.out.println("working");
 				if (result == JOptionPane.OK_OPTION) {
-					System.out.println("Teacher Name: " + signOut[teacherNames.getSelectedIndex()]);// +
-																									// petList.setSelectedIndex(result));
+					System.out.println("Teacher Name: " + signOut[teacherNames.getSelectedIndex()]);
 					System.out.println("Amount Value: " + amount.getText());
+					Item.signOutTeacher((String) signOut[teacherNames.getSelectedIndex()],
+							Integer.parseInt(amount.getText()));
 				}
 
 				// Create the combo box, select item at index 4.
@@ -611,7 +614,7 @@ public class ChemGui extends JFrame {
 				// JComboBox petList = new JComboBox(signOut);
 				// petList.setSelectedIndex(4);
 				// petList.addActionListener(this);
-			}
+			}*/
 
 		}
 
@@ -646,12 +649,9 @@ public class ChemGui extends JFrame {
 
 	/*
 	 * search searches for the piece of string inputed in items(names)
-	 * 
 	 * @param: a string to search for and the arrayList of the items
-	 * 
 	 * @return: returns a new arraylist containing all the items with the str as
 	 * part of their name(not case sensitive)
-	 * 
 	 * @author: Ali Meshkat
 	 */
 	public static ArrayList<Item> search(String str, ArrayList<Item> items) {
@@ -669,10 +669,9 @@ public class ChemGui extends JFrame {
 
 	/*
 	 * updateTables updates the tables with their new values
-	 * 
 	 * @return: void
-	 * 
 	 * @param: none
+	 * @author: Ali Meshkat
 	 */
 	public void updateTables() {
 		// updates search table
@@ -726,12 +725,9 @@ public class ChemGui extends JFrame {
 
 	/*
 	 * saveToFile is run at the end of the program to save the3 modified itemList to
-	 * the file for future use
-	 * 
+	 * the file for future use 
 	 * @param: arraylist of items
-	 * 
 	 * @return: void
-	 * 
 	 * @author: Ali Meshkat
 	 */
 	public static void saveToFile(ArrayList<Item> itemList) {
@@ -793,15 +789,6 @@ public class ChemGui extends JFrame {
 		public void mouseClicked(final MouseEvent e) {
 			if (e.getClickCount() == 1) {
 				JTable sourceTable = (JTable) e.getSource();
-				/*int rowTeacher = sourceTable.getSelectedRow();
-				int columnTeacher = sourceTable.getSelectedColumn();
-				equipmentNameTF.setText((String) sourceTable.getValueAt(rowTeacher, 0));
-				roomNumTF.setText((String) (sourceTable.getValueAt(rowTeacher, 1) + " "));
-				locationTF.setText((String) (sourceTable.getValueAt(rowTeacher, 2) + " "));
-				quantityTF.setText((String) (sourceTable.getValueAt(rowTeacher, 3) + " "));
-				numInStockTF.setText((String) (sourceTable.getValueAt(rowTeacher, 4) + " "));
-				teacherSignedOutTF.setText((String) (sourceTable.getValueAt(rowTeacher, 5) + " "));*/
-				
 				equipmentNameTF.setText(searched.get(searchTable.getSelectedRow()).getEquipmentName());
 				roomNumTF.setText("" + searched.get(searchTable.getSelectedRow()).getRoomNumber());
 				locationTF.setText(searched.get(searchTable.getSelectedRow()).getLocation());
