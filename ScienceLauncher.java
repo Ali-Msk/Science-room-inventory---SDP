@@ -78,8 +78,9 @@ public class ScienceLauncher {
 		getTeachers();
 		getAllTeachersFile();
 		getScienceTeachersFile();
-		
-		
+		System.out.println(Item.getAllTeacherNames());
+		System.out.println("SCIENCEEEEEEE: " + Item.getScienceTeacherNames());
+
 		try {
 			new ChemGui();
 		} catch (Exception E) {
