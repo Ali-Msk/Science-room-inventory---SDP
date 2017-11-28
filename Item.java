@@ -7,6 +7,7 @@ import java.util.Iterator;
 public class Item {
 	// create varible
 	private static ArrayList<String> allTeachers = new ArrayList<String>(); //name of all teachers in the school - static
+	private static ArrayList<String> scienceTeachers = new ArrayList<String>(); //name of all teachers in science - static
 	private static int numberInStock;
 	private int totalAmountItemInOneLocation;
 	private int roomNumber;
@@ -39,10 +40,9 @@ public class Item {
 		this.equipmentName = equipmentName;
 	}
 
-	/*
+	/**
 	 * main constructor used to create an item and save in itemList takes in all as
 	 * string and converts
-	 * 
 	 * @param: all required fields in form of string
 	 */
 	public Item(String name, String roomNumber, String location, String total, String amountLeft) {
@@ -142,6 +142,9 @@ public class Item {
 	}
 	
 	
+	
+	// getters and setters for item.java
+
 	public  ArrayList<String> getSignOutName() {
 		return this.signOutName;
 	}
@@ -149,11 +152,9 @@ public class Item {
 		return allTeachers;
 	}
 	
-	
-	
-	
-
-	// getters and setters for item.java
+	public static ArrayList<String> getScienceTeacherNames(){
+		return scienceTeachers;
+	}
 
 	public String getEquipmentName() {
 		return equipmentName;
@@ -198,10 +199,6 @@ public class Item {
 	public void setLocation(int numLeft) {
 		this.numLeft = numLeft;
 	}
-
-//	public ArrayList<String> getSignOutName() {
-	//	return this.signOutName;
-	//}
 
 	public void setTotal(String totalAmountItemInOneLocation) {
 		try {
