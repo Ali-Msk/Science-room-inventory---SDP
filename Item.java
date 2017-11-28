@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 public class Item {
 	// create varible
-	private static ArrayList<String> teachers = new ArrayList<String>();
+	private static ArrayList<String> allTeachers = new ArrayList<String>(); //name of all teachers in the school - static
 	private static int numberInStock;
 	private int totalAmountItemInOneLocation;
 	private int roomNumber;
@@ -14,7 +14,7 @@ public class Item {
 	private String location;
 	private String equipmentName;
 	private HashMap<String, Integer> signOut = new HashMap<String, Integer>();
-	private ArrayList<String> signOutName;
+	private ArrayList<String> signOutName; //is the name of the teachers who have signed this out
 
 	// constructors
 	public Item(String equipmentName, int roomNumber, String location, int totalAmountItemInOneLocation) {
@@ -115,62 +115,108 @@ public class Item {
 
 		return num;
 	}
+	
+	
+	
+	
+	public void signOutTeacher(String teacherName, int numberOfItemSignOut) {
+		this.signOutName.add(teacherName);
+		this.numLeft -= numberOfItemSignOut;
+		// if it has a teacher's name in the signout list, then combine two
+		// signout values to one
+		if (signOut.containsKey(teacherName)) {
+			// if the sign out number of the teacher + numberOfItemSignOut is 0,
+			// then remove the teacher's name from the list.
+			if (signOut.get(teacherName) == -numberOfItemSignOut) {
+				signOut.remove(teacherName);
+
+			} else {
+				// add number sign out to the list
+				signOut.put(teacherName, signOut.get(teacherName) + numberOfItemSignOut);
+
+			}
+		} else {
+			// else add the name to the list
+			signOut.put(teacherName, numberOfItemSignOut);
+		}
+	}
+	
+	
+	public  ArrayList<String> getSignOutName() {
+		return this.signOutName;
+	}
+	public static ArrayList<String> getAllTeacherNames(){
+		return allTeachers;
+	}
+	
+	
+	
+	
 
 	// getters and setters for item.java
 
 	public String getEquipmentName() {
 		return equipmentName;
 	}
+
 	public void setEquipmentName(String str) {
 		this.equipmentName = str;
 	}
+
 	public int getTotalNumberOfItem() {
 		return totalAmountItemInOneLocation;
 	}
+
 	public int getNumberInStock() {
 		return numberInStock;
 	}
+
 	public void setNumberInStock(int numberInStock) {
 		this.numberInStock = numberInStock;
 	}
+
 	public int getRoomNumber() {
 		return this.roomNumber;
 	}
+
 	public void setRoomNumber(int room) {
 		this.roomNumber = room;
 	}
+
 	public String getLocation() {
 		return this.location;
 	}
+
 	public void setLocation(String location) {
 		this.location = location;
 	}
+
 	public int getNumLeft() {
 		return this.numLeft;
 	}
+
 	public void setLocation(int numLeft) {
 		this.numLeft = numLeft;
 	}
-	public ArrayList<String> getSignOutName() {
-		return this.signOutName;
-	}
+
+//	public ArrayList<String> getSignOutName() {
+	//	return this.signOutName;
+	//}
 
 	public void setTotal(String totalAmountItemInOneLocation) {
 		try {
-		this.totalAmountItemInOneLocation = Integer.parseInt(totalAmountItemInOneLocation);
-		}catch(Exception E) {
+			this.totalAmountItemInOneLocation = Integer.parseInt(totalAmountItemInOneLocation);
+		} catch (Exception E) {
 			System.out.println("Number available cannot contain letters");
 		}
 	}
-	
+
 	public void setRoomNum(String roomNum) {
 		try {
 			this.roomNumber = Integer.parseInt(roomNum);
-		}catch(Exception E) {
+		} catch (Exception E) {
 			System.out.println("Room number cannot contain letters");
 		}
 	}
 
-	
-	
 }
