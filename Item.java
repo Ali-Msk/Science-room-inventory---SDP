@@ -66,7 +66,16 @@ public class Item {
 
 	// signout some number of item
 	public void signOut(String teacherName, int numberOfItemSignOut) {
-		signOutName.add(teacherName);
+		boolean dontAdd = false;
+		for(int i = 0; i<=signOutName.size()-1; i ++) {
+			if (signOutName.get(i).equals(teacherName)) {
+				dontAdd = true;
+			}
+		}
+		if(!dontAdd) {
+			signOutName.add(teacherName);
+		}
+		
 		this.numLeft -= numberOfItemSignOut;
 		// if it has a teacher's name in the signout list, then combine two
 		// signout values to one
@@ -116,8 +125,16 @@ public class Item {
 		return num;
 	}
 	
-	
-	
+	/**
+	 * getTeacherAmount
+	 * returns the number of this item the input teacher has signed out\
+	 * @param: string name of the teacher
+	 * @return: the number of this item the teacher has signed out\
+	 * @author: Ali Meshkat
+	 */
+	public int getTeacherAmount(String name) {
+		return signOut.get(name);
+	}
 	
 	public void signOutTeacher(String teacherName, int numberOfItemSignOut) {
 		this.signOutName.add(teacherName);
