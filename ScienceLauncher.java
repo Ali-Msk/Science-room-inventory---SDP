@@ -220,7 +220,7 @@ public class ScienceLauncher {
 		//the line number is the item
 		try{
 			Scanner input = new Scanner (new File ("SignOutTeacherNames.txt"));
-			int lineNum = -1;
+			int lineNum = +1;
 			while (input.hasNext()) {
 				lineNum++; //keeps track of line num
 				String item = input.nextLine(); //gets next line
