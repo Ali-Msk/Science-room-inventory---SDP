@@ -236,6 +236,7 @@ public class ScienceLauncher {
 					}
 					
 					itemList.get(lineNum).getSignOutName().add(name); //adds the teacher to item
+					
 				    name = "";
 					i++;
 					if (item.substring(i, i+1).equals("#")) { //if end of line
