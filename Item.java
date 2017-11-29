@@ -99,6 +99,12 @@ public class Item {
 	// method for signBack
 	public void signBack(String teacherName) {
 		this.numLeft += signOut.get(teacherName); // updates amount left
+		for (int i =0; i <= signOutName.size()-1; i++) {
+			if (signOutName.get(i).equals(teacherName)) {
+				signOutName.remove(i);
+			}
+		}
+		
 		for (int i = 0; i <= signOutName.size() - 1; i++) { // finds the teacher
 			// in arrayList and
 			// removes
@@ -106,6 +112,7 @@ public class Item {
 				signOutName.remove(i);
 			}
 		}
+		System.out.println("Signed backk in");
 		signOut.remove(teacherName);
 	}
 
@@ -136,28 +143,6 @@ public class Item {
 		return signOut.get(name);
 	}
 	
-	public void signOutTeacher(String teacherName, int numberOfItemSignOut) {
-		this.signOutName.add(teacherName);
-		this.numLeft -= numberOfItemSignOut;
-		// if it has a teacher's name in the signout list, then combine two
-		// signout values to one
-		if (signOut.containsKey(teacherName)) {
-			// if the sign out number of the teacher + numberOfItemSignOut is 0,
-			// then remove the teacher's name from the list.
-			if (signOut.get(teacherName) == -numberOfItemSignOut) {
-				signOut.remove(teacherName);
-
-			} else {
-				// add number sign out to the list
-				signOut.put(teacherName, signOut.get(teacherName) + numberOfItemSignOut);
-
-			}
-		} else {
-			// else add the name to the list
-			signOut.put(teacherName, numberOfItemSignOut);
-		}
-	}
-	
 	
 	
 	// getters and setters for item.java
@@ -165,11 +150,11 @@ public class Item {
 	public  ArrayList<String> getSignOutName() {
 		return this.signOutName;
 	}
-	public static ArrayList<String> getAllTeacherNames(){
+	public static ArrayList<String> getAllTeachers(){
 		return allTeachers;
 	}
 	
-	public static ArrayList<String> getScienceTeacherNames(){
+	public static ArrayList<String> getScienceTeachers(){
 		return scienceTeachers;
 	}
 

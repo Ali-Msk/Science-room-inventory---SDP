@@ -37,14 +37,15 @@ public class ScienceLauncher {
 		getTeachers();
 		getAllTeachersFile();
 		getScienceTeachersFile();
-		System.out.println(Item.getAllTeacherNames());
-		System.out.println("SCIENCEEEEEEE: " + Item.getScienceTeacherNames());
+		System.out.println(Item.getAllTeachers());
+		System.out.println("SCIENCEEEEEEE: " + Item.getScienceTeachers());
+		
+		System.out.println("TEsTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: " + itemList.get(0).getTeacherAmount(itemList.get(0).getSignOutName().get(0)));
+
 
 		
 		
-		for (int i = 0 ; i<= 10000; i++) {
-			System.out.println(itemList.get(0).getTeacherAmount("firstName2 LastName2"));
-		}
+
 		
 		try {
 			new ChemGui();
@@ -197,7 +198,7 @@ public class ScienceLauncher {
 					while (!(item.substring(i, i + 1).equals("#"))) {
 						name += item.substring(i, i + 1);
 						i++;
-											                                                                                                                      System.out.println("name found: " + name);
+				   //   System.out.println("name found: " + name);
 					}
 					
 					itemList.get(lineNum).getSignOutName().add(name); //adds the teacher to item
@@ -212,7 +213,7 @@ public class ScienceLauncher {
 			}
 			input.close();
 		} catch (IOException FileNotFoundException) { // checks for io exception
-			System.out.println("ERROR:  teachers input file not found");// messages
+			//System.out.println("ERROR:  teachers input file not found");// messages
 			FileNotFoundException.printStackTrace(); // prints error details to
 														// the console
 		}
@@ -241,11 +242,11 @@ public class ScienceLauncher {
 					while (!line.substring(i, i + 1).equals("#")) {
 						amount += line.substring(i, i + 1);
 						i++;
-					    System.out.println("name found: " + amount);
+					//    System.out.println("name found: " + amount);
 					}	
 					if (!amount.equals("")) {//if not empty
 						itemList.get(lineNum).signOut(itemList.get(lineNum).getSignOutName().get(teacherNum), Integer.parseInt(amount));//uses the signoutName to sign out the item by the teacher with the amount just 
-						System.out.println("teacher + value added: " + amount +"  for " + itemList.get(lineNum).getSignOutName().get(teacherNum));
+						//System.out.println("teacher + value added: " + amount +"  for " + itemList.get(lineNum).getSignOutName().get(teacherNum));
 					}
 					teacherNum++;
 					amount = "";
@@ -282,7 +283,7 @@ public class ScienceLauncher {
 		try {
 			Scanner input = new Scanner (new File ("AllTeachers.txt"));
 			while(input.hasNext()) {
-				Item.getAllTeacherNames().add(input.nextLine()); //gets line and add to teachers
+				Item.getAllTeachers().add(input.nextLine()); //gets line and add to teachers
 			}
 			input.close();
 		}catch (IOException FileNotFoundException) { // checks for io exception
@@ -302,7 +303,7 @@ public class ScienceLauncher {
 		try {
 			Scanner input = new Scanner (new File ("ScienceTeachers.txt"));
 			while(input.hasNext()) {
-				Item.getScienceTeacherNames().add(input.nextLine()); //gets line and add to science teachers
+				Item.getScienceTeachers().add(input.nextLine()); //gets line and add to science teachers
 			}
 			input.close();
 		}catch (IOException FileNotFoundException) { // checks for io exception
