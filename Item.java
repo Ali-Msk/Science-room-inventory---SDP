@@ -15,7 +15,7 @@ public class Item {
 	private String location;
 	private String equipmentName;
 	private HashMap<String, Integer> signOut = new HashMap<String, Integer>();
-	private ArrayList<String> signOutName; //is the name of the teachers who have signed this out
+	private static ArrayList<String> signOutName; //is the name of the teachers who have signed this out
 
 	// constructors
 	public Item(String equipmentName, int roomNumber, String location, int totalAmountItemInOneLocation) {
@@ -98,6 +98,7 @@ public class Item {
 
 	// method for signBack
 	public void signBack(String teacherName) {
+		if (signOut.get(teacherName) != null) {
 		this.numLeft += signOut.get(teacherName); // updates amount left
 		for (int i = 0; i <= signOutName.size() - 1; i++) { // finds the teacher
 			// in arrayList and
@@ -108,6 +109,7 @@ public class Item {
 		}
 		signOut.remove(teacherName);
 	}
+}
 
 	// a method that get the totalAmountItemInOneLocation number of item sign
 	// out
@@ -162,8 +164,8 @@ public class Item {
 	
 	// getters and setters for item.java
 
-	public  ArrayList<String> getSignOutName() {
-		return this.signOutName;
+	public static  ArrayList<String> getSignOutName() {
+		return signOutName;
 	}
 	public static ArrayList<String> getAllTeacherNames(){
 		return allTeachers;
@@ -232,5 +234,5 @@ public class Item {
 			System.out.println("Room number cannot contain letters");
 		}
 	}
-
+	
 }
