@@ -30,21 +30,55 @@ public class ScienceLauncher {
 		teacherName = new ArrayList<String>();
 		allTeacherInSchool = new ArrayList<String>();
 		
+		teacherName.add("l;akjdf");
+		teacherName.add("l;1211");
+		teacherName.add("l;4444444444");
+		allTeacherInSchool.add("l;555");
+		allTeacherInSchool.add("l;6666");
+		allTeacherInSchool.add("l;77777");
+		allTeacherInSchool.add("l;88888");
+		allTeacherInSchool.add("l;9999");
+		allTeacherInSchool.add("l;2");
+		allTeacherInSchool.add("l;wqe");
+		allTeacherInSchool.add("l;77231777");
+		allTeacherInSchool.add("l;8812131888");
+		//allTeacherInSchool.add("l;9999");		
+		allTeacherInSchool.add("l;55qwe5");
+		allTeacherInSchool.add("l;66qwe66");
+		allTeacherInSchool.add("l;77weq777");
+		allTeacherInSchool.add("l;88qwe888");
+		allTeacherInSchool.add("l;zsweqq9999");
+		allTeacherInSchool.add("l;sad555");
+		allTeacherInSchool.add("l;ad6666");
+		allTeacherInSchool.add("l;ae377777");
+		allTeacherInSchool.add("l;awe388888");
+		allTeacherInSchool.add("l;we999sear9");
+		allTeacherInSchool.add("l;eeaeaw2");
+		allTeacherInSchool.add("l;wweaefrarearaerwearqe");
+		allTeacherInSchool.add("l;7aerwearaerr7231777");
+		allTeacherInSchool.add("l;8eaweraer812131888");
+		allTeacherInSchool.add("l;99erwwearwearer99");		
+		allTeacherInSchool.add("l;5aewearrwearer5qwe5");
+		allTeacherInSchool.add("l;66erqwe66");
+		allTeacherInSchool.add("l;77ererwearweq777");
+		allTeacherInSchool.add("l;88erererwwerwearqwe888");
+		allTeacherInSchool.add("l;zswwearwerereaeqq9999");
+		
+		
+		itemList.get(0).signOut("GHoli", 3);
+		itemList.get(0).signOut("Mr. J", 3);
+		itemList.get(0).signBack("GHoli");
+		itemList.get(0).signOut("Mr", 3);
+		itemList.get(0).signOut("MS Hi", 10);
+		itemList.get(0).signBack("Mr. J");
 
 		
-	
+		
 		
 		getTeachers();
 		getAllTeachersFile();
 		getScienceTeachersFile();
-		System.out.println(Item.getAllTeacherNames());
-		System.out.println("SCIENCEEEEEEE: " + Item.getScienceTeacherNames());
-
 		
-		
-		for (int i = 0 ; i<= 10000; i++) {
-			System.out.println(itemList.get(0).getTeacherAmount("firstName2 LastName2"));
-		}
 		
 		try {
 			new ChemGui();
@@ -200,8 +234,7 @@ public class ScienceLauncher {
 											                                                                                                                      System.out.println("name found: " + name);
 					}
 					
-					itemList.get(lineNum).getSignOutName().add(name); //adds the teacher to item
-					
+					//itemList.get(lineNum).getSignOutName().add(name); //adds the teacher to item
 				    name = "";
 					i++;
 					if (item.substring(i, i+1).equals("#")) { //if end of line
@@ -242,16 +275,12 @@ public class ScienceLauncher {
 						amount += line.substring(i, i + 1);
 						i++;
 					    System.out.println("name found: " + amount);
-					}	
+					}					
 					if (!amount.equals("")) {//if not empty
-						itemList.get(lineNum).signOut(itemList.get(lineNum).getSignOutName().get(teacherNum), Integer.parseInt(amount));//uses the signoutName to sign out the item by the teacher with the amount just 
-						System.out.println("teacher + value added: " + amount +"  for " + itemList.get(lineNum).getSignOutName().get(teacherNum));
-					}
-					teacherNum++;
-					amount = "";
+						//itemList.get(lineNum).signOut(itemList.get(lineNum).getSignOutName().get(teacherNum), Integer.parseInt(amount));//uses the signoutName to sign out the item by the teacher with the amount just 
+					}																						//fetched from the file 
 					i++;
-					//fetched from the file 
-
+					teacherNum++;
 					if (line.substring(i, i+1).equals("#")) { //if end of line
 						terminated = true;
 					}
