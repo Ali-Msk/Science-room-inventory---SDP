@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.swing.Box;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
@@ -99,6 +100,7 @@ public class ChemGui extends JFrame {
 	private JButton saveButton;
 	private JButton takeButton;
 
+
 	// creating tabs
 	// private JTabbedPane programTab;
 
@@ -135,7 +137,7 @@ public class ChemGui extends JFrame {
 	private JTable tableTeacher;
 
 	ChemGui() throws Exception {
-
+		//teacherSearchCB.addMouseListener(new MyMouseListener3());
 		JFrame myWindow = new JFrame("Equipment Inventory");// creates a new window to
 		// work with
 		myWindow.setSize(1000, 555);// set size of window by 700 by 700 pixals
@@ -150,7 +152,6 @@ public class ChemGui extends JFrame {
 
 		// creating JComboBoxes
 		teacherSearchCB = new JComboBox(teacherSearch);
-
 		// creating tabbed panes
 		programTab = new JTabbedPane();
 
@@ -181,7 +182,15 @@ public class ChemGui extends JFrame {
 		addButton = new JButton("Add");
 		saveButton = new JButton("Delete");
 		takeButton = new JButton("Take/Return Equipment");
-
+		//setting colours
+		/*searchButton.setBackground(new Color (255, 208, 255));
+		replenishButton.setBackground(new Color (255, 208, 255));
+		addButton.setBackground(new Color (255, 208, 255));
+		saveButton.setBackground(new Color (255, 208, 255));
+		takeButton.setBackground(new Color (255, 208, 255));*/
+		
+		
+		
 		// creating action listeners
 		// for search tab
 		searchButton.addActionListener(new searchButtonListener());
@@ -199,6 +208,15 @@ public class ChemGui extends JFrame {
 		numInStockTF = new JTextField();
 		teacherSignedOutTF = new JTextField();
 		numSignedOutTF = new JTextField();
+		
+		/*searchTextField.setBackground(new Color(255, 208, 255));
+		equipmentNameTF.setBackground(new Color(255, 208, 255));
+		roomNumTF.setBackground(new Color(255, 208, 255));
+		locationTF.setBackground(new Color(255, 208, 255));
+		quantityTF.setBackground(new Color(255, 208, 255));
+		numInStockTF.setBackground(new Color(255, 208, 255));
+		teacherSignedOutTF.setBackground(new Color(255, 208, 255));
+		numSignedOutTF.setBackground(new Color(255, 208, 255));*/
 
 		// creating labels
 		// for search tab
@@ -209,7 +227,7 @@ public class ChemGui extends JFrame {
 		numInStockL = new JLabel(" Number Available: ");
 		teacherSignedOutL = new JLabel(" Teacher's Signed Out: ");
 		numSignedOutL = new JLabel(" Number Signed Out: ");
-		signedOutInfo = new JLabel("testingggg");
+		signedOutInfo = new JLabel();
 
 		// creating border layout
 
@@ -272,9 +290,11 @@ public class ChemGui extends JFrame {
 		// to search table
 		searchTable.setModel(new MyTableModel(searchData, searchColumns));
 		searchTable.setAutoCreateRowSorter(true);
-		
-		
-		//is used to set sizes for each column 
+		searchTable.setOpaque(true);/////%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%make sure this works
+		searchTable.setFillsViewportHeight(true);//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%^
+		searchTable.setBackground(new Color(255, 255, 208)); //colour
+
+		// is used to set sizes for each column
 		TableColumnModel columModel = searchTable.getColumnModel();
 		columModel.getColumn(0).setPreferredWidth(175);     
 		columModel.getColumn(1).setPreferredWidth(12);    
@@ -292,6 +312,11 @@ public class ChemGui extends JFrame {
 		inventoryTable.setAutoCreateRowSorter(true);
 		
 		inventoryTable.setFont(new Font ("Dialog", Font.BOLD, 12));
+
+		// colour
+		inventoryTable.setOpaque(true);//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+		inventoryTable.setFillsViewportHeight(true);
+		inventoryTable.setBackground(new Color(255, 255, 208));
 
 		TableColumnModel columModel2 = inventoryTable.getColumnModel(); //sets sizes for columns 
 		columModel2.getColumn(0).setPreferredWidth(225); 
@@ -315,6 +340,9 @@ public class ChemGui extends JFrame {
 		infoGrid.add(teacherSearchCB);
 		infoGrid.add(numSignedOutL);
 		infoGrid.add(signedOutInfo);
+		infoGrid.setBackground(new Color(208, 255, 255));//colour
+
+		teacherSearchCB.addMouseListener(new MyMouseListener3());
 
 		// search button grid
 		searchButtonGrid.add(replenishButton);
@@ -377,13 +405,13 @@ public class ChemGui extends JFrame {
 
 		String[] columnsTeacher = new String[] { "Teacher Selected" };
 		String[] columnsAllTeacher = new String[] { "All the Teacher In School" };
-		Object[][] dataTeacher = new Object[ScienceLauncher.teacherName.size()][columnsTeacher.length];
-		Object[][] dataAllTeacher = new Object[ScienceLauncher.allTeacherInSchool.size()][columnsTeacher.length];
+		Object[][] dataTeacher = new Object[Item.getScienceTeachers().size()][columnsTeacher.length];
+		Object[][] dataAllTeacher = new Object[Item.getAllTeachers().size()][columnsTeacher.length];
 		for (int i = 0; i < ScienceLauncher.teacherName.size(); i++) {
-			dataTeacher[i][0] = ScienceLauncher.teacherName.get(i);
+			dataTeacher[i][0] = Item.getScienceTeachers().get(i);
 		}
 		for (int i = 0; i < ScienceLauncher.allTeacherInSchool.size(); i++) {
-			dataAllTeacher[i][0] = ScienceLauncher.allTeacherInSchool.get(i);
+			dataAllTeacher[i][0] = Item.getAllTeachers().get(i);
 		}
 
 		// create table with data
@@ -414,10 +442,14 @@ public class ChemGui extends JFrame {
 		searchTextField.getDocument().addDocumentListener(new MyDocumentListener());
 
 		programTab.addTab("Add/Delete Teacher", teacherPanel);
+		programTab.setBackground(new Color(208, 255, 255));//colour
+
 		// adding to mainPanel
 		mainPanel.add(programTab);
 		// adding to window
 		myWindow.add(mainPanel);
+		myWindow.setBackground(new Color(208, 255, 255));//colour
+
 		myWindow.setVisible(true);
 
 	}
@@ -432,7 +464,7 @@ public class ChemGui extends JFrame {
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	// Vincents Code
+	
 	public class MyTableModel extends DefaultTableModel {
 
 		public MyTableModel(Object[][] tableData, Object[] colNames) {
@@ -444,14 +476,11 @@ public class ChemGui extends JFrame {
 		}
 	}
 
-	/*
+	/**
 	 * searchButtonListener takes the text entered and searches for items with that
 	 * name and updates
-	 * 
 	 * @author: Ali Meshkat
-	 * 
 	 * @date: Nov 20th
-	 * 
 	 * @instructor: MR.Mangat
 	 */
 	public class searchButtonListener implements ActionListener {
@@ -465,14 +494,11 @@ public class ChemGui extends JFrame {
 
 	}
 
-	/*
+	/**
 	 * searchButtonListener updates the info for the selected item takks input from
 	 * the other text fields to edit the info of the selected item from the list
-	 * 
 	 * @author: Ali Meshkat
-	 * 
 	 * @date: Nov 20th
-	 * 
 	 * @instructor: MR.Mangat
 	 */
 	public class replenishButtonListener implements ActionListener {
@@ -520,7 +546,7 @@ public class ChemGui extends JFrame {
 
 	
 
-	/*
+	/**
 	 * addButtonListener takes info from the textfields and uses them to create a
 	 * new object
 	 * @author: Ali Meshkat
@@ -551,51 +577,52 @@ public class ChemGui extends JFrame {
 	public class takeButtonListener implements ActionListener {
 
 		public void actionPerformed(ActionEvent arg0) {
-	/*		// should only activate if an item is selected and the take button is clicked
+			System.out.println("taken");
+			// should only activate if an item is selected and the take button is clicked
 			Object[] options = { "Borrowing", "Returning" };
-			String input = "";
-			int selection = JOptionPane.showOptionDialog(null, "Are you signing some equipment in or out",
+			System.out.println("taking out stuff");
+			int selection = JOptionPane.showOptionDialog(null, "Are you Borrowing Equipment or Returing It?",
 					"Equipment Inventory", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options,
 					options[0]);
 			System.out.println("Selection: " + selection);
+			
+			
 			if (selection == 1) {
-				ArrayList<String> teachers = new ArrayList<String>();
-				teachers = Item.getSignOutName();
-				Object[] signIn = teachers.toArray();
-				if (signIn.length >= 2) {
-					input = (String) JOptionPane.showInputDialog(null,
-							"Select your name and it will sign in all of your equipment.", "Equipment Inventory",
-							JOptionPane.INFORMATION_MESSAGE, null, signIn, signIn[1]);
-					System.out.println(input);
-					if (input == null) {
-
-					} else if (input != null) {
-						Item.signBack((String) input);
+				
+				Object[] signIn = searched.get(searchTable.getSelectedRow()).getSignOutName().toArray();
+				Object input = JOptionPane.showInputDialog(null,
+						"Select your name and it will Return all of your equipment.", "Equipment Inventory",
+						JOptionPane.INFORMATION_MESSAGE, null, signIn, signIn);
+				System.out.println("Works for now");
+				if (input != null) {
+					int index = -1;
+					for (int i = 0; i < signIn.length; i++) {
+						if (signIn[i].equals(input)) {
+							index = i;
+							break;
+						}
 					}
-				} else if (signIn.length == 1) {
-					input = (String) JOptionPane.showInputDialog(null,
-							"Select your name and it will sign in all of your equipment.", "Equipment Inventory",
-							JOptionPane.INFORMATION_MESSAGE, null, signIn, signIn[0]);
+				//	for (int i = 0; i < ScienceLauncher.itemList.size(); i++) {
+				////		ScienceLauncher.itemList.get(i).signBack((String) signIn[index]);
+				//	}
+					searched.get(searchTable.getSelectedRow()).signBack(""+signIn[index]);
+					
 					System.out.println(input);
-					if (input == null) {
-
-					} else if (input != null) {
-						Item.signBack((String) input);
-					}
-				} else {
-					JOptionPane.showMessageDialog(null, "No teacher has taken anything to return");
 				}
+				
+				
+				
 			} else if (selection == 0) {
-				// String[] signOut = {"A", "B", "C", "D", "E", "F" };// should be replaced with
-				// the list of teachers from the array
-				ArrayList<String> teachers = new ArrayList<String>();
-				teachers = Item.getTeacherName();
-				Object[] signOut = teachers.toArray();
+				System.out.println("borrowing");
+				// String[] signOut = { "A", "B", "C", "D", "E", "F" };// should be replaced
+				// with the list of teachers from
+				Object[] signOut = Item.getScienceTeachers().toArray(); // the array
 				JComboBox teacherNames = new JComboBox(signOut);
 				JTextField amount = new JTextField(5);
 				JPanel myPanel = new JPanel();
 				myPanel.add(new JLabel("Amount: "));
 				myPanel.add(amount);
+				amount.setText("" + searched.get(searchTable.getSelectedRow()).getNumLeft());
 				myPanel.add(Box.createHorizontalStrut(15)); // a spacer
 				myPanel.add(new JLabel("Name: "));
 				myPanel.add(teacherNames);
@@ -604,18 +631,13 @@ public class ChemGui extends JFrame {
 				System.out.println("working");
 				if (result == JOptionPane.OK_OPTION) {
 					System.out.println("Teacher Name: " + signOut[teacherNames.getSelectedIndex()]);
+					System.out.println("Teacher Name: " + signOut[teacherNames.getSelectedIndex()]);// +
+																									// petList.setSelectedIndex(result));
 					System.out.println("Amount Value: " + amount.getText());
-					Item.signOutTeacher((String) signOut[teacherNames.getSelectedIndex()],
-							Integer.parseInt(amount.getText()));
+					searched.get(searchTable.getSelectedRow()).signOut(
+							((String) signOut[teacherNames.getSelectedIndex()]), (Integer.parseInt(amount.getText())));
 				}
-
-				// Create the combo box, select item at index 4.
-				// Indices start at 0, so 4 specifies the pig.
-				// JComboBox petList = new JComboBox(signOut);
-				// petList.setSelectedIndex(4);
-				// petList.addActionListener(this);
-			}*/
-
+			}
 		}
 
 	}
@@ -647,7 +669,7 @@ public class ChemGui extends JFrame {
 		}
 	}
 
-	/*
+	/**
 	 * search searches for the piece of string inputed in items(names)
 	 * @param: a string to search for and the arrayList of the items
 	 * @return: returns a new arraylist containing all the items with the str as
@@ -667,7 +689,7 @@ public class ChemGui extends JFrame {
 		return found;
 	}
 
-	/*
+	/**
 	 * updateTables updates the tables with their new values
 	 * @return: void
 	 * @param: none
@@ -723,7 +745,7 @@ public class ChemGui extends JFrame {
 
 	}
 
-	/*
+	/**
 	 * saveToFile is run at the end of the program to save the3 modified itemList to
 	 * the file for future use 
 	 * @param: arraylist of items
@@ -731,6 +753,7 @@ public class ChemGui extends JFrame {
 	 * @author: Ali Meshkat
 	 */
 	public static void saveToFile(ArrayList<Item> itemList) {
+		//saves itemList
 		try {
 			PrintWriter output = new PrintWriter(new File("Equipment.txt"));
 			for (int i = 0; i <= ScienceLauncher.itemList.size() - 1; i++) {
@@ -744,7 +767,69 @@ public class ChemGui extends JFrame {
 			output.close();
 			System.out.println("updatedddddddd");
 		} catch (IOException error) {
-			System.out.println("output IO error");
+			System.out.println("Equipment output IO error");
+		} catch (Exception E) {
+			System.out.println("ERROR");
+		}
+		
+		//saves AllTeachers
+		try {
+			PrintWriter output = new PrintWriter(new File("AllTeachers.txt"));
+			for (int i = 0; i <= Item.getAllTeachers().size() - 1; i++) {
+				output.println(Item.getAllTeachers().get(i));
+			}
+			output.close();
+			System.out.println("updatedddddddd all teachers");
+		} catch (IOException error) {
+			System.out.println("AllTeachers output IO error");
+		} catch (Exception E) {
+			System.out.println("ERROR");
+		}
+		
+		//saves sciecneTeachers
+		try {
+			PrintWriter output = new PrintWriter(new File("ScienceTeachers.txt"));
+			for (int i = 0; i <= Item.getScienceTeachers().size() - 1; i++) {
+				output.println(Item.getScienceTeachers().get(i));
+			}
+			output.close();
+			System.out.println("updatedddddddd science teachers");
+		} catch (IOException error) {
+			System.out.println("ScienceTeachers output IO error");
+		} catch (Exception E) {
+			System.out.println("ERROR");
+		}
+		
+		//saves what teachers each item was signed out by 
+		try {
+			PrintWriter output = new PrintWriter(new File("SignOutTeacherNames.txt"));
+			for (int i = 0; i <= ScienceLauncher.itemList.size() - 1; i++) { //runs through items
+				for (int j = 0; j <= ScienceLauncher.itemList.get(i).getSignOutName().size();j++) { //runs through number teachers who signed it out
+					output.print(ScienceLauncher.itemList.get(i).getSignOutName().get(j) + "#"); //puts name + # 
+				}
+				output.println("##");//closes off line
+			}
+			output.close();
+			System.out.println("SignOutNames updatedddddddd");
+		} catch (IOException error) {
+			System.out.println("Equipment output IO error");
+		} catch (Exception E) {
+			System.out.println("ERROR");
+		}
+		
+		//saves how many each teacher signed out 
+		try {
+			PrintWriter output = new PrintWriter(new File("SignOutValues.txt"));
+			for (int i = 0; i <= ScienceLauncher.itemList.size() - 1; i++) { //runs through items
+				for (int j = 0; j <= ScienceLauncher.itemList.get(i).getSignOutName().size();j++) { //runs through number teachers who signed it out
+					output.print(ScienceLauncher.itemList.get(i).getSignOutName().get(j) + "#"); //puts name + # 
+				}
+				output.println("##");//closes off line
+			}
+			output.close();
+			System.out.println("SignOutNames updatedddddddd");
+		} catch (IOException error) {
+			System.out.println("Equipment output IO error");
 		} catch (Exception E) {
 			System.out.println("ERROR");
 		}
@@ -795,6 +880,33 @@ public class ChemGui extends JFrame {
 				System.out.println("cllickedededededd");
 				quantityTF.setText("" + searched.get(searchTable.getSelectedRow()).getTotalNumberOfItem());
 				numInStockTF.setText("" + searched.get(searchTable.getSelectedRow()).getNumLeft());
+				
+				
+				
+				
+				// this is for the JComboBox that displays the teachers that have signed out
+				// that item
+				Object[] teachers = searched.get(searchTable.getSelectedRow()).getSignOutName().toArray();
+				DefaultComboBoxModel model = (DefaultComboBoxModel) teacherSearchCB.getModel();
+				// removing old data
+				model.removeAllElements();
+				for (int i = 0; i < teachers.length; i++) {
+					model.addElement(teachers[i]);
+				}
+				teacherSearchCB.setModel(model);
+				//Object[] teachers = searched.get(searchTable.getSelectedRow()).getSignOutName().toArray();
+				System.out.println("Working?");
+				int numberOut = 0;
+				numberOut = searched.get(searchTable.getSelectedRow())
+						.getTeacherAmount((String) teachers[teacherSearchCB.getSelectedIndex()]);
+				numberOut = searched.get(searchTable.getSelectedRow()).getTeacherAmount(
+						searched.get(searchTable.getSelectedRow()).getSignOutName().get(teacherSearchCB.getSelectedIndex()));
+				// signedOutInfo.setText((String)
+				// searched.get(searchTable.getSelectedRow()).getSignOutName().get(teacherSearchCB.getSelectedIndex()));
+				System.out.println("uppdated?");
+
+				signedOutInfo.setText("" + numberOut);
+				
 			}
 		}
 	}
@@ -816,6 +928,42 @@ public class ChemGui extends JFrame {
 
 		}
 
+	}
+	
+	public class MyMouseListener3 extends MouseAdapter {
+		public void mouseClicked(final MouseEvent e) {
+			if (e.getClickCount() == 1) {
+				Object sourceTable = e.getSource();
+				/*
+				 * String[] teachers = (String[])
+				 * searched.get(searchTable.getSelectedRow()).getSignOutName()).toArray();
+				 * DefaultComboBoxModel model = (DefaultComboBoxModel)
+				 * teacherSearchCB.getModel(); // removing old data model.removeAllElements();
+				 * for(int i =0; i< teachers.length; i++) { model.addElement(teachers[i]); }
+				 * teacherSearchCB.setModel(model);
+				 */
+				Object[] teachers = searched.get(searchTable.getSelectedRow()).getSignOutName().toArray();
+			//	DefaultComboBoxModel model = (DefaultComboBoxModel) teacherSearchCB.getModel();
+				// removing old data
+			////	model.removeAllElements();
+			//	for (int i = 0; i < teachers.length; i++) {
+			//		model.addElement(teachers[i]);
+			///	}
+			//	teacherSearchCB.setModel(model);
+				//Object[] teachers = searched.get(searchTable.getSelectedRow()).getSignOutName().toArray();
+				System.out.println("Working?");
+				int numberOut = 0;
+				numberOut = searched.get(searchTable.getSelectedRow())
+						.getTeacherAmount((String) teachers[teacherSearchCB.getSelectedIndex()]);
+				numberOut = searched.get(searchTable.getSelectedRow()).getTeacherAmount(
+						searched.get(searchTable.getSelectedRow()).getSignOutName().get(teacherSearchCB.getSelectedIndex()));
+				// signedOutInfo.setText((String)
+				// searched.get(searchTable.getSelectedRow()).getSignOutName().get(teacherSearchCB.getSelectedIndex()));
+				System.out.println("uppdated?");
+
+				signedOutInfo.setText("" + numberOut);
+			}
+		}
 	}
 
 	public void setUpTable() {
