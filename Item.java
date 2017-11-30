@@ -1,3 +1,9 @@
+/**
+ * [Item.java]
+ * is an object for all the equipment that will be stored 
+ * stores the name, teachers who have signed it out and the quantity(total and current)
+ * @auhtor: Ali Meshkat, Vincent Zhang 
+ */
 import java.util.ArrayList;
 import java.lang.Integer;
 import java.util.Map;
@@ -5,10 +11,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 public class Item {
-	// create varible
+	// create variables
 	private static ArrayList<String> allTeachers = new ArrayList<String>(); //name of all teachers in the school - static
 	private static ArrayList<String> scienceTeachers = new ArrayList<String>(); //name of all teachers in science - static
-	private static int numberInStock;
+	
 	private int totalAmountItemInOneLocation;
 	private int roomNumber;
 	private int numLeft; // amount left (not signed out)
@@ -17,33 +23,12 @@ public class Item {
 	private HashMap<String, Integer> signOut = new HashMap<String, Integer>();
 	private ArrayList<String> signOutName; //is the name of the teachers who have signed this out
 
-	// constructors
-	public Item(String equipmentName, int roomNumber, String location, int totalAmountItemInOneLocation) {
-		this.equipmentName = equipmentName;
-		this.roomNumber = roomNumber;
-		this.location = location;
-		this.totalAmountItemInOneLocation = totalAmountItemInOneLocation;
-	}
-
-	public Item(String equipmentName, int roomNumber, String location) {
-		this.equipmentName = equipmentName;
-		this.roomNumber = roomNumber;
-		this.location = location;
-	}
-
-	public Item(String equipmentName, int roomNumber) {
-		this.equipmentName = equipmentName;
-		this.roomNumber = roomNumber;
-	}
-
-	public Item(String equipmentName) {
-		this.equipmentName = equipmentName;
-	}
-
+	
 	/**
 	 * main constructor used to create an item and save in itemList takes in all as
 	 * string and converts
 	 * @param: all required fields in form of string
+	 * @author Ali Meshkat
 	 */
 	public Item(String name, String roomNumber, String location, String total, String amountLeft) {
 		this.equipmentName = name;
@@ -144,9 +129,22 @@ public class Item {
 	}
 	
 	
-	
-	// getters and setters for item.java
-
+	/**
+	 * getters return the values requested
+	 * 
+	 * @param: none
+	 * @return the variables requested
+	 * @author Ali Meshkat(done most)
+	 * @author2 Vincent Zhang
+	 */
+	/**
+	 * setters
+	 * set the new values to the corresponding variables
+	 * @param: the type of the corresponding value
+	 * @return void
+	 * @author: Ali Meshkat(done most)
+	 * @author2: Vincent Zhang
+	 */
 	public  ArrayList<String> getSignOutName() {
 		return this.signOutName;
 	}
@@ -170,14 +168,6 @@ public class Item {
 		return totalAmountItemInOneLocation;
 	}
 
-	public int getNumberInStock() {
-		return numberInStock;
-	}
-
-	public void setNumberInStock(int numberInStock) {
-		this.numberInStock = numberInStock;
-	}
-
 	public int getRoomNumber() {
 		return this.roomNumber;
 	}
@@ -196,6 +186,10 @@ public class Item {
 
 	public int getNumLeft() {
 		return this.numLeft;
+	}
+
+	public void setNumLeft(int num) {
+		this.numLeft = num;
 	}
 
 	public void setLocation(int numLeft) {
