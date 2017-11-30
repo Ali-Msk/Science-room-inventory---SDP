@@ -149,11 +149,6 @@ public class ChemGui extends JFrame {
 		// work with
 		myWindow.setSize(1000, 555);// set size of window by 700 by 700 pixals
 		myWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // sets the
-		// program
-		// to close
-		// when the
-		// window
-		// closes
 
 		// vincent 2 end
 
@@ -190,19 +185,11 @@ public class ChemGui extends JFrame {
 		addButton = new JButton("Add");
 		saveButton = new JButton("Delete");
 		takeButton = new JButton("Take/Return Equipment");
-		// setting colours
-		/*
-		 * searchButton.setBackground(new Color (255, 208, 255));
-		 * replenishButton.setBackground(new Color (255, 208, 255));
-		 * addButton.setBackground(new Color (255, 208, 255));
-		 * saveButton.setBackground(new Color (255, 208, 255));
-		 * takeButton.setBackground(new Color (255, 208, 255));
-		 */
 
 		// creating action listeners
 		// for search tab
 		searchButton.addActionListener(new searchButtonListener());
-		replenishButton.addActionListener(new replenishButtonListener());
+		replenishButton.addActionListener(new EditButtonListener());
 		addButton.addActionListener(new addButtonListener());
 		takeButton.addActionListener(new takeButtonListener());
 		saveButton.addActionListener(new DeleteButtonListener());
@@ -216,17 +203,6 @@ public class ChemGui extends JFrame {
 		numInStockTF = new JTextField();
 		teacherSignedOutTF = new JTextField();
 		numSignedOutTF = new JTextField();
-
-		/*
-		 * searchTextField.setBackground(new Color(255, 208, 255));
-		 * equipmentNameTF.setBackground(new Color(255, 208, 255));
-		 * roomNumTF.setBackground(new Color(255, 208, 255));
-		 * locationTF.setBackground(new Color(255, 208, 255));
-		 * quantityTF.setBackground(new Color(255, 208, 255));
-		 * numInStockTF.setBackground(new Color(255, 208, 255));
-		 * teacherSignedOutTF.setBackground(new Color(255, 208, 255));
-		 * numSignedOutTF.setBackground(new Color(255, 208, 255));
-		 */
 
 		// creating labels
 		// for search tab
@@ -294,9 +270,6 @@ public class ChemGui extends JFrame {
 		searchTable.setRowSorter(sorter);
 		// sorter.setSortable(0, false);
 
-		// searchTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
-		// searchTable.getColumn(1).setPreferredWidth(100);
-
 		// creating the inventory tab table
 		inventoryTable = new JTable(inventoryData, inventoryColumns);
 
@@ -304,9 +277,8 @@ public class ChemGui extends JFrame {
 		// to search table
 		searchTable.setModel(new MyTableModel(searchData, searchColumns));
 		searchTable.setAutoCreateRowSorter(true);
-		searchTable.setOpaque(true);///// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%make sure this
-									///// works
-		searchTable.setFillsViewportHeight(true);// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%^
+		searchTable.setOpaque(true);
+		searchTable.setFillsViewportHeight(true);
 		searchTable.setBackground(new Color(255, 255, 208)); // colour
 
 		// is used to set sizes for each column
@@ -325,7 +297,7 @@ public class ChemGui extends JFrame {
 		inventoryTable.setFont(new Font("Dialog", Font.BOLD, 12));
 
 		// colour
-		inventoryTable.setOpaque(true);// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+		inventoryTable.setOpaque(true);
 		inventoryTable.setFillsViewportHeight(true);
 		inventoryTable.setBackground(new Color(255, 255, 208));
 
@@ -384,7 +356,6 @@ public class ChemGui extends JFrame {
 
 		// Adding to panels
 		// for inventory tab
-		// inventoryPanel.add(inventoryTable);
 		// for search tab
 		// item panel
 		infoPanel.add(infoBorder);
@@ -438,10 +409,8 @@ public class ChemGui extends JFrame {
 		teacherGridLayout.add(signOutButton);
 
 		teacherPageGridLayout.add(teacherGridLayout);
-		//
-		////////////////////////////////////////////
+		
 		teacherPanel.add(new JScrollPane(tableAllTeacher));
-		////////////////////////////////////////////
 		teacherPanel.add(teacherPageGridLayout);
 		teacherPanel.add(new JScrollPane(tableTeacher));
 
@@ -464,7 +433,7 @@ public class ChemGui extends JFrame {
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////END OF CONSTRUCTOR//////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -484,9 +453,8 @@ public class ChemGui extends JFrame {
 	/**
 	 * searchButtonListener takes the text entered and searches for items with that
 	 * name and updates
-	 * 
 	 * @author: Ali Meshkat
-	 * @date: Nov 20th
+	 * @date: Nov 20t
 	 * @instructor: MR.Mangat
 	 */
 	public class searchButtonListener implements ActionListener {
@@ -497,22 +465,23 @@ public class ChemGui extends JFrame {
 			searched = search(searchFor, ScienceLauncher.itemList); // runs the search method
 			updateTables(); // updates the tables
 		}
-
 	}
 
 	/**
-	 * searchButtonListener updates the info for the selected item takks input from
-	 * the other text fields to edit the info of the selected item from the list
+	 * searchButtonListener 
+	 * updates the info for the selected item takks input from
+	 * the other text fields to edit the info of the selected item from the list/
 	 * 
 	 * @author: Ali Meshkat
 	 * @date: Nov 20th
 	 * @instructor: MR.Mangat
 	 */
-	public class replenishButtonListener implements ActionListener {
+	public class EditButtonListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.out.println(searchTable.getSelectedRow());
+
 			// sets the selected attributes to the txt fields if not empty
 			if (!equipmentNameTF.getText().equals("")) {
 				searched.get(searchTable.getSelectedRow()).setEquipmentName(equipmentNameTF.getText());
@@ -524,8 +493,22 @@ public class ChemGui extends JFrame {
 				searched.get(searchTable.getSelectedRow()).setLocation(locationTF.getText());
 			}
 			if (!quantityTF.getText().equals("")) {
+				try {
+
+					if (searched.get(searchTable.getSelectedRow()).getNumLeft() == searched
+							.get(searchTable.getSelectedRow()).getTotalNumberOfItem()) {
+						searched.get(searchTable.getSelectedRow()).setNumLeft(Integer.parseInt(quantityTF.getText()));
+					}
+
+				} catch (Exception E) { // if letters were entered
+					System.out.println("ERROR: Number must be entered");
+					E.printStackTrace();
+				}
+
 				searched.get(searchTable.getSelectedRow()).setTotal(quantityTF.getText());
+
 			}
+
 			// resets text fields
 			equipmentNameTF.setText("");
 			roomNumTF.setText("");
@@ -533,18 +516,6 @@ public class ChemGui extends JFrame {
 			quantityTF.setText("");
 			numInStockTF.setText("");
 
-			/*
-			 * (2(2(2(2(2(2(2(2(2(2(2(2(2(2)2)2)2)2)2)2)2)2)2)2)2)2)2)
-			 * equipmentNameTF.setText(ScienceLauncher.itemList.get(searchTable.
-			 * getSelectedRow()).getEquipmentName()); roomNumTF.setText("" +
-			 * ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getRoomNumber());
-			 * locationTF.setText(ScienceLauncher.itemList.get(searchTable.getSelectedRow())
-			 * .getLocation()); quantityTF.setText("" +
-			 * ScienceLauncher.itemList.get(searchTable.getSelectedRow()).
-			 * getTotalNumberOfItem()); numInStockTF.setText("" +
-			 * ScienceLauncher.itemList.get(searchTable.getSelectedRow()).getNumLeft());
-			 */
-			System.out.println("replenished");
 			updateTables(); // updates tables
 			saveToFile(ScienceLauncher.itemList);// saves changes to file
 		}
@@ -554,9 +525,8 @@ public class ChemGui extends JFrame {
 	/**
 	 * addButtonListener takes info from the textfields and uses them to create a
 	 * new object
-	 * 
 	 * @author: Ali Meshkat
-	 * @date: Nov 20th
+	 * @date: Nov 29th, 2017
 	 * @instructor: MR.Mangat
 	 */
 	public class addButtonListener implements ActionListener {
@@ -645,13 +615,9 @@ public class ChemGui extends JFrame {
 
 	}
 
-	/*
+	/**
 	 * DeleteButtonListener deletes the selected item from the list of equipments
-	 * 
 	 * @author: Ali Meshkat
-	 * 
-	 * @date: Nov 20th
-	 * 
 	 * @instructor: MR.Mangat
 	 */
 	public class DeleteButtonListener implements ActionListener {
@@ -678,11 +644,10 @@ public class ChemGui extends JFrame {
 	/**
 	 * search searches for the piece of string inputed in items(names)
 	 * 
-	 * @param: a
-	 *             string to search for and the arrayList of the items
-	 * @return: returns a new arraylist containing all the items with the str as
-	 *          part of their name(not case sensitive)
+	 * @param: a string to search for and the arrayList of the items
+	 * @return: returns a new arraylist containing all the items with the str as part of their name(not case sensitive)
 	 * @author: Ali Meshkat
+	 * @instructor: MR.Mangat
 	 */
 	public static ArrayList<Item> search(String str, ArrayList<Item> items) {
 		ArrayList<Item> found = new ArrayList<Item>(); // new arrayList to return
@@ -699,7 +664,6 @@ public class ChemGui extends JFrame {
 
 	/**
 	 * updateTables updates the tables with their new values
-	 * 
 	 * @return: void
 	 * @param: none
 	 * @author: Ali Meshkat
@@ -747,14 +711,11 @@ public class ChemGui extends JFrame {
 
 		inventoryTable = new JTable(inventoryData, inventoryColumns);
 
-		// searchTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
-
 	}
 
 	/**
 	 * saveToFile is run at the end of the program to save the3 modified itemList to
 	 * the file for future use
-	 * 
 	 * @param: arraylist
 	 *             of items
 	 * @return: void
@@ -763,8 +724,10 @@ public class ChemGui extends JFrame {
 	public static void saveToFile(ArrayList<Item> itemList) {
 		// saves itemList
 		try {
-			PrintWriter output = new PrintWriter(new File("Equipment.txt"));
-			for (int i = 0; i <= ScienceLauncher.itemList.size() - 1; i++) {
+			PrintWriter output = new PrintWriter(new File("Equipment.txt")); //creates print writer
+			for (int i = 0; i <= ScienceLauncher.itemList.size() - 1; i++) { //runs through itemlist
+				//adds components + # to giude the program input in getting the
+				//values at the beginning of the next time program runs 
 				output.print(ScienceLauncher.itemList.get(i).getEquipmentName() + "#");
 				output.print(ScienceLauncher.itemList.get(i).getRoomNumber() + "#");
 				output.print(ScienceLauncher.itemList.get(i).getLocation() + "#");
@@ -772,13 +735,11 @@ public class ChemGui extends JFrame {
 				output.println(ScienceLauncher.itemList.get(i).getNumLeft() + "##");
 
 			}
-			output.close();
+			output.close(); //closes printWriter 
 			System.out.println("updatedddddddd");
-		} catch (IOException error) {
-			System.out.println("Equipment output IO error");
-		} catch (Exception E) {
-			System.out.println("ERROR");
-		}
+		} catch (IOException error) { //catches io error
+			System.out.println("ERROR: Equipment output IO");
+		} 
 
 		// saves AllTeachers
 		try {
@@ -790,9 +751,7 @@ public class ChemGui extends JFrame {
 			System.out.println("updatedddddddd all teachers");
 		} catch (IOException error) {
 			System.out.println("AllTeachers output IO error");
-		} catch (Exception E) {
-			System.out.println("ERROR");
-		}
+		} 
 
 		// saves sciecneTeachers
 		try {
@@ -804,9 +763,7 @@ public class ChemGui extends JFrame {
 			System.out.println("updatedddddddd science teachers");
 		} catch (IOException error) {
 			System.out.println("ScienceTeachers output IO error");
-		} catch (Exception E) {
-			System.out.println("ERROR");
-		}
+		} 
 
 		// saves what teachers each item was signed out by
 		try {
@@ -952,25 +909,14 @@ public class ChemGui extends JFrame {
 
 			if (searched.get(searchTable.getSelectedRow()).getSignOutName().size() > 0) {
 				// try{
+				for (int i = 0; i<= searched.size()-1;i++)
+					System.out.println("searched: " +  searched.get(i).getEquipmentName());
+
 				Object[] teachers = searched.get(searchTable.getSelectedRow()).getSignOutName().toArray();
-				// }catch(Exception E){
-				// System.out.println("index out of bounds");
-				// E.printStackTrace();
-				// }
-				// DefaultComboBoxModel model = (DefaultComboBoxModel)
-				// teacherSearchCB.getModel();
-				// removing old data
-				// // model.removeAllElements();
-				// for (int i = 0; i < teachers.length; i++) {
-				// model.addElement(teachers[i]);
-				// / }
-				// teacherSearchCB.setModel(model);
-				// Object[] teachers =
-				// searched.get(searchTable.getSelectedRow()).getSignOutName().toArray();
 				System.out.println("Working?");
 				int numberOut = 0;
-				numberOut = searched.get(searchTable.getSelectedRow())
-						.getTeacherAmount((String) teachers[teacherSearchCB.getSelectedIndex()]);
+			//	numberOut = searched.get(searchTable.getSelectedRow())
+			//			.getTeacherAmount((String) teachers[teacherSearchCB.getSelectedIndex()]);
 				numberOut = searched.get(searchTable.getSelectedRow()).getTeacherAmount(searched
 						.get(searchTable.getSelectedRow()).getSignOutName().get(teacherSearchCB.getSelectedIndex()));
 				// signedOutInfo.setText((String)
