@@ -1,63 +1,689 @@
-Siingle Beam Balances#2018#1#1000#-21366##
-Dissecting Microscopes#2018#2#11#-14017##
-Extera Beaker 125 ml#2018#4#12#-14016##
+Triple Beam Balances#2018#1#18#18##
+Dissecting Microscopes#2018#2#11#11##
+Extera Beaker 125 ml#2018#4#12#12##
 Extera Beaker 250 ml#2018#4#7#7##
-Extera Beaker 1000 ml#2018#4#8#-14020##
-Extra Test Tubes#2018#5TT#0#-580##
-small round heater#2018#6#9#-14019##
-toothpicks#2018##0#-10##
-graduated cylinder 10ml#2018##0#-16##
-Teachers Cupboard#2018##0#-16##
-Density materials#2018##0#-16##
-overflow cans and random objects#2018##0#-16##
-Broken Microscopes and various parts#2018##0#-16##
-Thermometer#2018#L1#0#-14028##
+Extera Beaker 1000 ml#2018#4#8#8##
+Extra Test Tubes#2018#5#0#0##
+small round heater#2018#6#9#9##
+toothpicks#2018##0#0##
+graduated cylinder 10ml#2018##0#0##
+Teachers Cupboard#2018##0#0##
+Density materials#2018##0#0##
+overflow cans and random objects#2018##0#0##
+Broken Microscopes and Various Parts#2018##0#0##
+Thermometer#2018#L1#0#0##
 Scoopula#2018#L2#0#0##
-Stir rods#2018#L2#0#-14028##
-Dissecting Microscopes#2018#2TT#11#-580##
-Petri dishes#2018##0#-16##
-Watch glasses#2018##0#-10##
-Spot plates#2018#G5#0#-14028##
-Retort stands#2018##0#-16##
-Dropper#2018##0#-16##
-Tweezers#2018##0#-16##
-Tooth picks#2018##0#-16##
-Sand paper#2018##0#-16##
+Stir rods#2018#L2#0#0##
+Magnifying glasses#2018#L2#0#0##
+Petri dishes#2018##0#0##
+Watch glasses#2018##0#0##
+Spot plates#2018##0#0##
+Retort stands#2018##0#0##
+Dropper#2018##0#0##
+Tweezers#2018##0#0##
+Tooth picks#2018##0#0##
+Sand paper#2018##0#0##
 Wooden splints#2018##0#0##
-Funnels#2018##0#-16##
-pH paper#2018##0#-10##
-Test tube racks#2018##0#-16##
-Test tube racks#2018##0#-10##
-Cylinder container (60 mL)#2018##0#-16##
-Bunsen buurner#2018##0#-16##
-Retort stand#2018##0#-16##
-Barnstead HN Ultrapure#2018##0#-16##
-Rubber stoppers (00- 1 hole)#2018##0#-16##
-Rubber stoppers (1- 9 hole)#2018##0#-16##
+Funnels#2018##0#0##
+pH paper#2018##0#0##
+Test tube racks#2018##0#0##
+Test tube racks#2018##0#0##
+Cylinder container (60 mL)#2018##0#0##
+Bunsen buurner#2018##0#0##
+Retort stand#2018##0#0##
+Barnstead HN Ultrapure#2018##0#0##
+Rubber stoppers (00- 1 hole)#2018##0#0##
+Rubber stoppers (1- 9 hole)#2018##0#0##
 glass rods#2018##0#0##
-Mortar & pestle#2018##0#-16##
-Retort stands#2018##0#-10##
-Graduated Cylinders #2018##0#-16##
-Test tubes#2018##0#-10##
-Test tube tongs#2018##0#-16##
-Wire gauze#2018##0#-16##
-Crucible tongs#2018##0#-16##
-Flasks#2018##0#-16##
-Beakers#2018##0#-16##
-Flint lighters#2018##0#-16##
+Mortar & pestle#2018##0#0##
+Retort stands#2018##0#0##
+Graduated Cylinders #2018##0#0##
+Test tubes#2018##0#0##
+Test tube tongs#2018##0#0##
 Wire gauze#2018##0#0##
-Bunsen burners#2018##0#-16##
-Test tube clamps#2018##0#-10##
-Ring clamps#2018##0#-16##
-Test tube racks#2018##0#-10##
-Triple Beam balances#2018##0#-16##
-Dissecting microscopes#2018##0#-16##
-Beakers#2018##0#-16##
-Flasks#2018##0#-16##
-Test tubes (varius sizes)#2018##0#-16##
-Flared test tubes#2018##0#-16##
+Crucible tongs#2018##0#0##
+Flasks#2018##0#0##
+Beakers#2018##0#0##
+Flint lighters#2018##0#0##
+Wire gauze#2018##0#0##
+Bunsen burners#2018##0#0##
+Test tube clamps#2018##0#0##
+Ring clamps#2018##0#0##
+Test tube racks#2018##0#0##
+Triple Beam balances#2018##0#0##
+Dissecting microscopes#2018##0#0##
+Beakers#2018##0#0##
+Flasks#2018##0#0##
+Test tubes (varius sizes)#2018##0#0##
+Flared test tubes#2018##0#0##
 Extra lab equipments#2018##0#0##
-Teacher's cupboard#2018##0#-16##
-Density#2018##0#-10##
-Microscope parts#2018##0#-16##
-Machine oil and glue#2018##0#-10##
+Teacher's cupboard#2018##0#0##
+Density#2018##0#0##
+Microscope parts#2018##0#0##
+Machine oil and glue#2018##0#0##
+WHMIS Binder#1031#PR1#0#0##
+Textbooks#1031#PR1#0#0##
+Sphygmomanometers#1031#PR2#0#0##
+Stethoscopes#1031#PR2#0#0##
+DNA Fingerprinting Kits#1031#PR3#0#0##
+Gel Electrophoresis Kits#1031#PR4#0#0##
+Micro pipettes#1031#PR4#0#0##
+Red Timers#1031#PR5#6#6##
+Kleenex#1031#PR6#0#0##
+Parafilm#1031#PR6#0#0##
+Molecule Kits#1031#PR7#16#16##
+1000mL Beakers#1031#PR8#0#0##
+600mL Beakers#1031#PR8#0#0##
+500mL Florence#1031#PR8#0#0##
+Flasks#1031#PR8#4#4##
+Kettles#1031#PR9#2#2##
+Sugar salt#1031#PR10#0#0##
+vinegar#1031#PR10#0#0##
+food colouring#1031#PR10#0#0##
+yeast#1031#PR10#0#0##
+Plastic bags#1031#PR11#0#0##
+aluminum foil#1031#PR11#0#0##
+Storage#1031#PR12#0#0##
+Swish Dish Detergent#1031#PR13#3#3##
+Plastic bags#1031#PR14#0#0##
+Electronic balances#1031#PR15#4#4##
+Hot Plates/Electronic Stirrers#1031#PR16#2#2##
+Blender Stereomicroscope#1031#PR17#1#1##
+Lamps & Light Bulbs (Photosysnthesis Lab)#1031#PR18#0#0##
+Blender#1031#PR19#1#1##
+Potato Corers#1031#PR20#0#0##
+Chromatography Kit#1031#PR21#0#0##
+White Greenhouse Trays#1031#PR22#17#17##
+Osmosis Lab Kit#1031#PR23#0#0##
+Fermentation Lab Kit#1031#PR23#0#0##
+Mitochondria Structure Kit#1031#PR23#0#0##
+DNA Extraction Kit#1031#PR23#0#0##
+Photosysnthesis Lab#1031#PR24#0#0##
+Storage#1031#PR25#0#0##
+Storage#1031#PR26#0#0##
+Microscopes#1031##0#0##
+Stereomicroscopes#1031#B58#21#21##
+Lab coats#1031#B59#28#28##
+Hoffman Apparatus#2000#PR1#0#0##
+Grade 11 Macromolecules Chemicals#2000#PR2 & PR3#0#0##
+Elements#2000##0#0##
+Grade 10 Chemsitry Summative unknowns#2000#PR4 & PR5#0#0##
+Ionic Compounds (Anions A - I)#2000#PR6 & PR7#0#0##
+Ionic Compounds (Anions M - Z)#2000#PR8 & PR9#0#0##
+Fly Lab Materials#2000#PR10 & PR11#0#0##
+Grade 9 Intro Activities#2000##0#0##
+Precipiate Lab & Unknowns#2000#PR12 & PR13#0#0##
+Empty Containers#2000#PR13#0#0##
+Graduated cylinder 1 litre#2000#PR14#1#1##
+One armed flasks#2000#PR15#6#6##
+Grade 10 Gifted#2000##0#0##
+separation of mixtures#2000##0#0##
+chromatography#2000#PR16#0#0##
+Households1#2000#PR17#0#0##
+Households2#2000#PR18#0#0##
+Dropper Bottles for solutions#2000#PR19 & PR20#0#0##
+Grade 9 Space solar system model#2000##0#0##
+17 X molecular model kits#2000#PR21 & PR22#0#0##
+Grade 9 Current Electricity#2000#PR2 & PR24#0#0##
+Grade 9 Electrostatics#2000#PR25 & PR26#0#0##
+Grade 10 Dissection Equipment#2000#PR27 & PR28#0#0##
+Microscope  Materials#2000#PR29 & PR30#0#0##
+Electronic Balances#2000#PR31 & PR32#0#0##
+Grade 10 Optics#2000##0#0##
+mirrors#2000#PR33 & PR34#0#0##
+prisms#2000#PR33 & PR34#0#0##
+lenses#2000#PR33 & PR34#0#0##
+Grade 10 Optics#2000##0#0##
+Ray boxes & Demos#2000#PR35 & PR36#0#0##
+Grade 10 Climate Demos#2000#PR37 & PR38#0#0##
+Tornado Maker#2000#PR39#0#0##
+Seriological pipettes (10 mL)#1050#L1/L2#700#700##
+pipettes (plastic)#1050#L1/L2#200#200##
+Squezze Bottle Tops#1050#L1/L2#20#20##
+Test Tube Holder Tongs#1050#L1/L2#20#20##
+Retort Stand Clamps#1050#L1/L2#20#20##
+Small Test Tube Brushes#1050#L1/L2#35#35##
+Iron Wool (in bags)#1050#L1/L2#1#1##
+Centrifuge#1050#L3/L4#5#5##
+Centrifuge Tubes#1050#L3/L4#0#0##
+Vortex Mixers#1050#L3/L4#0#0##
+Magnetic Stir Plates#1050#L3/L4#0#0##
+New Beakers Various Sizes#1050#L5/L6#0#0##
+Buckets (for lab tests)#1050#L7/L8#0#0##
+250 mL Erlenmeyer Flasks(new)#1050#L7/L8#0#0##
+New Glassware Beakers#1050#L7/L8#0#0##
+Electronic Balances (2 decimals)#1050#L9/L10#0#0##
+pH Meters#1050#L11/L12#0#0##
+Pipetter Bulbs#1050#L11/L12#0#0##
+Spot Plates#1050#L11/L12#0#0##
+1 mL Pipettes#1050#L11/L12#0#0##
+Volumetric Flasks (100 mL- 2000 mL)#1050#L13/L14#0#0##
+Lids for Volumetric Flasks#1050#L13/L14#0#0##
+Plastic Beakers (250 mL and 100 mL)#1050#L13/L14#0#0##
+New Test Tubes (various sizes)#1050#L15/L16#0#0##
+Erlenmeyer Flasks (25 mL - 1000 mL)#1050#L17/L18#0#0##
+First Aid Kit#1050#L17/L18#1#1##
+Beakers (50 mL)#1050#Equipment Shelves 1#31#31##
+Cleaning Supplies#1050#Equipment Shelves 1#0#0##
+Test Tube Racks#1050#Equipment Shelves 1#0#0##
+Clay Tiles#1050#Equipment Shelves 1#0#0##
+Buret Clamps#1050#Equipment Shelves 1#0#0##
+Metal Tongs#1050#Equipment Shelves 1#0#0##
+Test Tube Clamps#1050#Equipment Shelves 1#0#0##
+Bunsen Burners#1050#Equipment Shelves 1#0#0##
+Steel Mesh#1050#Equipment Shelves 1#0#0##
+Clay Triangle#1050#Equipment Shelves 1#0#0##
+Ring Clamp#1050#Equipment Shelves 1#0#0##
+Flint and Steel#1050#Equipment Shelves 1#0#0##
+Beakers 1000 mL#1050#Equipment Shelves (near fume hood) L24#6#6##
+Beakers 600 mL#1050#Equipment Shelves (near fume hood) L24#8#8##
+Beakers 400 mL#1050#Equipment Shelves (near fume hood) L24#6#6##
+Beakers 400 mL#1050#Equipment Shelves (near fume hood) L25#0#0##
+Beakers 150 mL#1050#Equipment Shelves (near fume hood) L25#0#0##
+Graduated Cylinders 250 mL#1050#Equipment Shelves (near fume hood) L25#10#10##
+Graduated Cylinders 125 mL#1050#Equipment Shelves (near fume hood) L25#10#10##
+Beakers 250 mL#1050#Equipment Shelves (near fume hood) L26#28#28##
+Graduated Cylinders 250 mL#1050#Equipment Shelves (near fume hood) L26#26#26##
+Graduated Cylinders 10 mL#1050#Equipment Shelves (near fume hood) L26#26#26##
+Safety Glasses#1050#Fume Hood Drawer L27#0#0##
+Glass Bottles#1050#Fume Hood Drawer L27#0#0##
+Test Tube Stoppers (Hole size 000 - 5)#1050#Fume Hood Drawer L28#0#0##
+Test Tube Stoppers (Hole size 000 - 5)#1050#Fume Hood Drawer L29#0#0##
+Crucibles#1050#Fume Hood Drawer L30#0#0##
+Mortars Pestles#1050#Fume Hood Drawer L31#0#0##
+Test Tubes#1050#Fume Hood Drawer L32#0#0##
+Thistle Tubes#1050#Fume Hood Drawer L32#0#0##
+Distilation Equipments#1050#Fume Hood Drawer L32#0#0##
+Glass Pipette 1 mL#1050#Fume Hood Drawer L33#0#0##
+Glass Pipette 10 mL#1050#Fume Hood Drawer L33#0#0##
+Glass Pippette#1050#Fume Hood Drawer L34#0#0##
+Thistle Tubes#1050#Fume Hood Drawer L34#0#0##
+Glass Pippette 10 mL#1050#Fume Hood Drawer L35#0#0##
+Glass Pippette 25 mL#1050#Fume Hood Drawer L35#0#0##
+Demo to make non- metal oxiddes and oxyacids (carbonic acid and sulfuric acid)#1050#Fume Hood Drawer L36#0#0##
+Test Tube Racks#1050#Fume Hood Drawer L37#15#15##
+pH Paper#1050#Fume Hood Drawer L38#0#0##
+Sand Paper#1050#Fume Hood Drawer L38#0#0##
+Hoses (various sizes)#1050#Fume Hood Drawer L39#0#0##
+Thermometer Clamps#1050#Fume Hood Drawer L40#0#0##
+Small Bunsen Burners#1050#Fume Hood Drawer L40#0#0##
+Flint and Steel#1050#Fume Hood Drawer L40#0#0##
+Splint Woods#1050#Fume Hood Drawer L40#0#0##
+Watch Glasses#1050#Fume Hood Drawer L41#0#0##
+Funnels#1050#Fume Hood Drawer L42#0#0##
+Scoopula#1050#Fume Hood Drawer L43#0#0##
+Magnifier#1050#Fume Hood Drawer L43#0#0##
+Tweezers#1050#Fume Hood Drawer L43#0#0##
+Capillary Tubes#1050#Fume Hood Drawer L43#0#0##
+Spark Metals#1050#Fume Hood Drawer L43#0#0##
+Gr. 11 Textbooks#2009#Large Cabinet in Back#0#0##
+Vernier Spirometer#2009#Bottem Left Cabinet (under sink)#2#2##
+Vernier Spirometer (Labquest Device)#2009#Bottem Left Cabinet (under sink)#1#1##
+Mouthpieces of oxygen sensor spirometer (disposable)#2009#Bottem Left Cabinet (under sink)#30#30##
+Spirometers (water displacement method)#2009#Bottem Left Cabinet (under sink)#2#2##
+Mouthpieces for spirometer#2009#Bottem Left Cabinet (under sink)#60#60##
+Pulse Oxymeters (Shim from math has one, should have 6)#2009#Bottem Left Cabinet (under sink)#5#5##
+Stethoscopes#2009#Bottem Left Cabinet (under sink)#10#10##
+Sphygmomanometer#2009#Bottem Left Cabinet (under sink)#11#11##
+Preserved Specimen Necturus maculosus#2009#Top Left (above sink)#1#1##
+Preserved Specimen Blue Tailed Skink#2009#Top Left (above sink)#1#1##
+Preserved Specimen Pterois olitans#2009#Top Left (above sink)#1#1##
+Preserved Specimen Myotis lucifugus#2009#Top Left (above sink)#1#1##
+Preserved Specimen Canus lupus#2009#Top Left (above sink)#1#1##
+Preserved Specimen Star Nosed Mole#2009#Top Left (above sink)#1#1##
+Preserved Specimen Turtle#2009#Top Left (above sink)#1#1##
+Preserved Specimen Squid#2009#Top Left (above sink)#1#1##
+Preserved Specimen Sus scrofa#2009#Top Left (above sink)#1#1##
+Preserved Specimen Diadophis punctatus#2009#Top Left (above sink)#1#1##
+Preserved Specimen Hog nosed snake#2009#Top Left (above sink)#1#1##
+Preserved Specimen Scleoporus Jarrovi#2009#Top Left (above sink)#2#2##
+Preserved Specimen Gartter Snake#2009#Top Left (above sink)#1#1##
+Preserved Specimen Lizard#2009#Top Left (above sink)#1#1##
+Preserved Specimen Lampropeltis trangulum#2009#Top Left (above sink)#1#1##
+Preserved Specimen Nerodia sipedon#2009#Top Left (above sink)#1#1##
+Preserved Specimen Phrynosoma cornutum#2009#Top Left (above sink)#1#1##
+Preserved Specimen Earthworm/leech/sandworm#2009#Center (above sink)#1#1##
+Preserved Specimen Crustecean#2009#Center (above sink)#1#1##
+Preserved Specimen Frog larvae#2009#Center (above sink)#1#1##
+Preserved Specimen Fallicambarus fodiens#2009#Center (above sink)#1#1##
+Preserved Specimen Crayfish#2009#Center (above sink)#1#1##
+Preserved Specimen Flounder#2009#Center (above sink)#1#1##
+Preserved Specimen Crab#2009#Center (above sink)#1#1##
+Preserved Specimen Gater Snake#2009#Center (above sink)#1#1##
+Preserved Specimen Red Bellied Snake#2009#Center (above sink)#1#1##
+Preserved Specimen Little Turtle#2009#Center (above sink)#4#4##
+Preserved Specimen Heterodon nassicus#2009#Center (above sink)#1#1##
+Preserved Specimen Green Frog#2009#Center (above sink)#1#1##
+Preserved Specimen Leopard Frog#2009#Center (above sink)#1#1##
+Preserved Specimen Wood Frog#2009#Center (above sink)#1#1##
+Preserved Specimen Common Toad#2009#Center (above sink)#1#1##
+Glass Blowing Box#1044#C1/C2#0#0##
+Glass Tubes#1044#C1/C2#0#0##
+Graham's Law#1044#C1/C2#0#0##
+Zundah 5th Chemistry#1044#C3/C4#0#0##
+Hot plate burners#1044#C5/C6#0#0##
+Paint Boots#1044#C7/C8#0#0##
+Painting Equipments#1044#C7/C8#0#0##
+Binders#1044#C9/C10#0#0##
+Different Types of Chemistry Books#1044#C9/C10#0#0##
+Test Tube Holder#1044#C11#0#0##
+Tongs#1044#C11#0#0##
+Splints#1044#C11#0#0##
+Bunsen Burners#1044#C11#0#0##
+Metal Rod#1044#C11#0#0##
+Foam Cups#1044#C11#0#0##
+Foam Cups#1044#C12/C13#0#0##
+Electro Static Elements#1044#C14/C15#0#0##
+AC/DC power supply#1044#C14/C15#0#0##
+Aluminum Wires#1044#C16/C17#0#0##
+Flash Bulbs#1044#C16/C17#0#0##
+Power Supply#1044#C16/C17#0#0##
+12 U Polarity lab#1044#C18/C19#0#0##
+11 AP Spectroscopy & Beer's Lab#1044#C18/C19#0#0##
+11 AP Flow charting lab#1044#C18/C19#0#0##
+Electrophoresis chamber and buffer#1044#C18/C19#0#0##
+DNA finger printing test#1044#C18/C19#0#0##
+Foam Cups#1044#C20/C21#0#0##
+12 AP Supplies#1044#C20/C21#0#0##
+11 U units LabTest#1044#C20/C21#0#0##
+Sodium Carbonate#1044#C20/C21#0#0##
+Ammonium nitrate#1044#C20/C21#0#0##
+Magnesium sulphate#1044#C20/C21#0#0##
+Sodium acetate#1044#C20/C21#0#0##
+Calcium chloride anhydrous#1044#C20/C21#0#0##
+Sodium cholride#1044#C20/C21#0#0##
+Water displacement lab equipments#1044#C22/C23#0#0##
+Chemical salts for lab#1044#C22/C23#0#0##
+Nelson grade 12 textbooks#1044#C24/C25#23#23##
+12 AP Chemistry textbook#1044#C26/C27#9#9##
+DC Coolers#1044#C28/C29#0#0##
+Beakers 1000 mL#1044#L19#1#1##
+Beakers 400 mL#1044#L19#8#8##
+Wengle's Stuff (lots)#2011#B1-B2#0#0##
+Coloured Paper, Cardstock (not much)#2011#B3-B4#0#0##
+Exercise Books (lots)#2011#B3-B4#0#0##
+Party Supplies#2011#B5-B6#0#0##
+Kelp meal, Phosphate testing kit, fertilizers seeds#2011#B7-B8#0#0##
+Electronic Balance#2011#B9-B10#1#1##
+Root-Vue farm kit#2011#B9-B10#0#0##
+Wooden Molecular Model Kits (no bonds)#2011#B11#0#0##
+Cell Models#2011#B11#0#0##
+Classifying Animals Kit#2011#B12-B13#0#0##
+Corn Activity#2011#B12-B13#0#0##
+Plastic Forks#2011#B12-B13#0#0##
+Plastic Knives#2011#B12-B13#0#0##
+Straws#2011#B12-B13#0#0##
+Pasta#2011#B12-B13#0#0##
+Blood Typing Kit#2011#B12-B13#0#0##
+Sandwich bags#2011#B12-B13#0#0##
+Human Genetics Experiment Kit#2011#B12-B13#0#0##
+Peppered Moth Activity#2011#B12-B13#0#0##
+Dixie cups#2011#B12-B13#0#0##
+Gibberellic Acid kit#2011#B12-B13#0#0##
+Fruit Loops#2011#B12-B13#0#0##
+Classifying Bacteria#2011#B12-B13#0#0##
+Plastic Tubing#2011#B12-B13#0#0##
+Seeds#2011#B14-B15#0#0##
+Skulls#2011#B14-B15#0#0##
+Dried Lung#2011#B14-B15#0#0##
+Pond Organisms#2011#B14-B15#0#0##
+Random chance.probability kit#2011#B14-B15#0#0##
+Blood typing kits#2011#B14-B15#0#0##
+PTC Paper#2011#B14-B15#0#0##
+Bio Models (scalp)#2011#B16-B17#0#0##
+Bio Models (armpit)#2011#B16-B17#0#0##
+Bio Models (sole of the foot)#2011#B16-B17#0#0##
+Dissected Earthworm Model#2011#B16-B17#0#0##
+11 C Biology Textbooks#2011#B18-B19#15#15##
+Empty Paper Towel Rolls#2011#B18-B19#0#0##
+Science Links 9 Workbook#2011#B20-B21#17#17##
+ON Science 9 Workbook#2011#B20-B21#16#16##
+Nelson Science 9 computerized Test Bank#2011#B20-B21#0#0##
+ON Science 10 Workbook#2011#B20-B21#15#15##
+Random dated Science Books#2011#B20-B21#0#0##
+Class Activity Cards#2011#B20-B21#0#0##
+Science 9 Teachers Resource#2011#B22-B23#0#0##
+Clothes pegs#2011#B22-B23#0#0##
+Plastic cups#2011#B22-B23#0#0##
+Funnels#2011#B22-B23#0#0##
+Light box/optical set#2011#B22-B23#11#11##
+Cleaning supplies#2011#B22-B23#0#0##
+Conductor Extension Cable#2011#B25#8#8##
+Plastic Trays#2011#B25#3#3##
+Molecular Motion Demonstration#2011#B25#0#0##
+Microviewers and slides (plant mitosis,asexual reproduction, animal tissues, comparative systems - circulatory, respiratory, digestive; binary fission)#2011#B26-B27#0#0##
+Probing the Sun's Secrets#2011#B26-B27#4#4##
+The Elements#2011#B26-B27#4#4##
+Measuring the Big Bang#2011#B26-B27#3#3##
+Kingdom Monera#2011#B26-B27#1#1##
+Respiratory System#2011#B26-B27#1#1##
+Anemometer#2011#B28-B29#0#0##
+Radiation Shields#2011#B28-B29#0#0##
+Rain Collector#2011#B28-B29#0#0##
+Tornadoe in a bottle#2011#B28-B29#0#0##
+Weather Turntable#2011#B28-B29#0#0##
+Weather Cycler Slides#2011#B28-B29#0#0##
+Cloud Chamber#2011#B28-B29#0#0##
+Dewpoint Apparatus#2011#B28-B29#0#0##
+Microscobes#2011#B30#0#0##
+Wires#2011#B31#0#0##
+Lab#2011#B31#0#0##
+Posters#2011#B31#0#0##
+Long Rulers#2011#B31#0#0##
+Student Projects#2011#B31#0#0##
+Magazines#2011#B31#0#0##
+magnesium Carbonate#1000#PR1/2Ammonium acetate-Sodium carbonate#0#0##
+Sodium Carbonate#1000#PR1/2Ammonium acetate-Sodium carbonate#0#0##
+Cupric carbonate basic#1000#PR1/2Ammonium acetate-Sodium carbonate#0#0##
+Ammonium Acetate#1000#PR1/2Ammonium acetate-Sodium carbonate#0#0##
+Potassium Bromide#1000#PR1/2Ammonium acetate-Sodium carbonate#0#0##
+Sodium Bromate#1000#PR1/2Ammonium acetate-Sodium carbonate#0#0##
+Sodium bicarbonate#1000#PR1/2Ammonium acetate-Sodium carbonate#0#0##
+Cupric bromide#1000#PR1/2Ammonium acetate-Sodium carbonate#0#0##
+Sodium bromide#1000#PR1/2Ammonium acetate-Sodium carbonate#0#0##
+Sodium acetate anhydrous#1000#PR1/2Ammonium acetate-Sodium carbonate#0#0##
+Sodium acetate#1000#PR1/2Ammonium acetate-Sodium carbonate#0#0##
+Silver acetate#1000#PR1/2Ammonium acetate-Sodium carbonate#0#0##
+Calcium acetate#1000#PR1/2Ammonium acetate-Sodium carbonate#0#0##
+Ammonium Acetate#1000#PR1/2Ammonium acetate-Sodium carbonate#0#0##
+Boric acid#1000#PR1/2Ammonium acetate-Sodium carbonate#0#0##
+Potassium acetate#1000#PR1/2Ammonium acetate-Sodium carbonate#0#0##
+calcium Chloride#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Ferric chloride#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Copper (ii) chloride Dihydrate#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Ferrous chloride#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+potassium chloride#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Nickel chloride#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Cobalt (ii) Chloride#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Ferric chloride anhydrous#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Ammonium chloride   (Hydrated)#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Copper (i) chloride#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Copper (ii) chloride#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Copper (ii) chloride anhydrous#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Copper (ii) chloride in 5 mL H2O#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Magnesium chloride#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Magnesium chloride, 6- Hydrate#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Ammonium chloride   #1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Cupric chloride#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Potassium chlorate#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+barium chloride#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Potassium Carbonate#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Sodium Chlorate#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Aluminum Chloride#1000#3/4 Potassium chlorate- Potassium chloride#0#0##
+Sodium chloride#1000#5/6 Soodium chloride- Sodium hydroxide#0#0##
+saturated Sodium chloride#1000#5/6 Soodium chloride- Sodium hydroxide#0#0##
+Potassium hydroxide#1000#5/6 Soodium chloride- Sodium hydroxide#0#0##
+Sodium hydroxide#1000#5/6 Soodium chloride- Sodium hydroxide#0#0##
+Calcium hydroxide#1000#5/6 Soodium chloride- Sodium hydroxide#0#0##
+Barium hydroxide#1000#5/6 Soodium chloride- Sodium hydroxide#0#0##
+Calcium flouride#1000#5/6 Soodium chloride- Sodium hydroxide#0#0##
+Potassium Ferricyanide#1000#5/6 Soodium chloride- Sodium hydroxide#0#0##
+Magnesium hydroxide#1000#5/6 Soodium chloride- Sodium hydroxide#0#0##
+Potassium chloride#1000#5/6 Soodium chloride- Sodium hydroxide#0#0##
+Potassium dichromate#1000#5/6 Soodium chloride- Sodium hydroxide#0#0##
+Potassium chromate#1000#5/6 Soodium chloride- Sodium hydroxide#0#0##
+Zinc chloride#1000#5/6 Soodium chloride- Sodium hydroxide#0#0##
+Tin (ii) chloride, dihydrate#1000#5/6 Soodium chloride- Sodium hydroxide#0#0##
+Tin (ii) chloride#1000#5/6 Soodium chloride- Sodium hydroxide#0#0##
+Cobalt (ii) nitrate#1000#7/8#0#0##
+Calcium nitrate, hydrate#1000#7/8#0#0##
+Calcium nitrate#1000#7/8#0#0##
+Barium nitrate#1000#7/8#0#0##
+Bismuth nitrate#1000#7/8#0#0##
+Aluminum nitrate, 9- hydrate#1000#7/8#0#0##
+Ammonium nitrate#1000#7/8#0#0##
+Sodium iodide#1000#7/8#0#0##
+Ammonium molybdate#1000#7/8#0#0##
+Molybdic acid#1000#7/8#0#0##
+Potassium iodide#1000#7/8#0#0##
+Potassium iodate#1000#7/8#0#0##
+saturated Potassiuum iodide#1000#7/8#0#0##
+Sodium molybdate#1000#7/8#0#0##
+Calcium Hypochlorite#1000#7/8#0#0##
+Potassium nitrate#1000#9/10 copper(ii) nitrate- potassium nitrate#0#0##
+Lead (ii) nitrate#1000#9/10 copper(ii) nitrate- potassium nitrate#0#0##
+Magnesium nitrate#1000#9/10 copper(ii) nitrate- potassium nitrate#0#0##
+Nickel nitrate#1000#9/10 copper(ii) nitrate- potassium nitrate#0#0##
+Lithium nitrate#1000#9/10 copper(ii) nitrate- potassium nitrate#0#0##
+Zinc nitrate#1000#9/10 copper(ii) nitrate- potassium nitrate#0#0##
+Ferric oxide#1000#9/10 copper(ii) nitrate- potassium nitrate#0#0##
+Ferric nitrate#1000#9/10 copper(ii) nitrate- potassium nitrate#0#0##
+Copper (ii) nitrate#1000#9/10 copper(ii) nitrate- potassium nitrate#0#0##
+Cupric nitrate, 3 hydrate#1000#9/10 copper(ii) nitrate- potassium nitrate#0#0##
+Cupric oxide#1000#11/ 12 Silver nitrate- Sodium phosphate#0#0##
+Sodium phosphate#1000#11/ 12 Silver nitrate- Sodium phosphate#0#0##
+Sodium phosphate Tribasic#1000#11/ 12 Silver nitrate- Sodium phosphate#0#0##
+Potassium Permanganate#1000#11/ 12 Silver nitrate- Sodium phosphate#0#0##
+Sodium nitrite#1000#11/ 12 Silver nitrate- Sodium phosphate#0#0##
+Silver nitrate#1000#11/ 12 Silver nitrate- Sodium phosphate#0#0##
+Disodium phosphate#1000#11/ 12 Silver nitrate- Sodium phosphate#0#0##
+Potassium phosphate#1000#11/ 12 Silver nitrate- Sodium phosphate#0#0##
+Magnesium Phosphate#1000#11/ 12 Silver nitrate- Sodium phosphate#0#0##
+Zinc oxide#1000#11/ 12 Silver nitrate- Sodium phosphate#0#0##
+Manganese dioxide#1000#11/ 12 Silver nitrate- Sodium phosphate#0#0##
+Zinc nitrate#1000#11/ 12 Silver nitrate- Sodium phosphate#0#0##
+Zinc nitrate, hexahydrate#1000#11/ 12 Silver nitrate- Sodium phosphate#0#0##
+Sodium nitrate#1000#11/ 12 Silver nitrate- Sodium phosphate#0#0##
+Strontium nitrate#1000#11/ 12 Silver nitrate- Sodium phosphate#0#0##
+Iron (ii) sulphate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Iron (ii) sulphate in dilute sulfuric acid#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Nickel Ammonium sulphate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Magnesium Sulfate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Magnesium Sulphate . X hydrate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Sodium bisulphate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Sodium sulphate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Potassium sulphate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Cupric sulphate, pentahydrate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Potassium persulphate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Manganese(ii) sulphate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Aluminim potassium sulphate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Aluminum potassium sulphate hydrate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Iron(iii) Ammonium sulphate, 12 hydrate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Iron (ii) ammonium sulphate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Ferric sulphide#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Iron (ii)sulphate, 7 hydrate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Chromic potassium sulphate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Ammonium sulphate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Cupric nitrate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Zinc Sulphate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Calcium sulphate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Cupric ammonium sulphate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Aluminum sulphate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Aluminum ammonium sulphate#1000#13/14 Aluminum sulphate- sodium sulphate#0#0##
+Chemistry club equipments#1000#PR 15#0#0##
+Coloured  H2O for 11U playday#1000#PR 16#0#0##
+Potassium hydroxide#1000#PR 16#0#0##
+Food colouring#1000#PR 16#0#0##
+Crystal violet#1000#PR 16#0#0##
+Gas and power key#1000#PR 16#0#0##
+! mol solutions #1000#PR 16#0#0##
+1 L Volumetric flask #1000#PR 17#9#9##
+extra mugs #1000#PR 17#0#0##
+Buffer solutions (pH 4, pH 7, pH 8,  pH 10)#1000#PR 18#0#0##
+Potassium chloride#1000#PR 18#0#0##
+Storage solution#1000#PR 18#0#0##
+Hot hands#1000#PR 18#0#0##
+Buncher funnel#1000#PR 18#0#0##
+1 arm flask#1000#PR 18#0#0##
+filter paper#1000#PR 18#0#0##
+Dropper#1000#PR 19#0#0##
+dropper tray#1000#PR 19#0#0##
+Large bottles#1000#PR 19#0#0##
+dropper bottles#1000#PR 19#0#0##
+squeeze liquid dispensers#1000#PR 19#0#0##
+pH indicators#1000#PR20#0#0##
+Acetic acid#1000#PR 21 (Acetic acid- Potassium dichromate)#0#0##
+Sodium acetate#1000#PR 21 (Acetic acid- Potassium dichromate)#0#0##
+Boric acid#1000#PR 21 (Acetic acid- Potassium dichromate)#0#0##
+Potassium bromide#1000#PR 21 (Acetic acid- Potassium dichromate)#0#0##
+Sodium bicarbonate#1000#PR 21 (Acetic acid- Potassium dichromate)#0#0##
+Sodium carbonate#1000#PR 21 (Acetic acid- Potassium dichromate)#0#0##
+Aluminum chloride#1000#PR 21 (Acetic acid- Potassium dichromate)#0#0##
+Ammonium chloride#1000#PR 21 (Acetic acid- Potassium dichromate)#0#0##
+Barium chloride#1000#PR 21 (Acetic acid- Potassium dichromate)#0#0##
+Calcium chloride#1000#PR 21 (Acetic acid- Potassium dichromate)#0#0##
+Copernicium chloride#1000#PR 21 (Acetic acid- Potassium dichromate)#0#0##
+Hydrochloric acid#1000#PR 21 (Acetic acid- Potassium dichromate)#0#0##
+Ferric chloride#1000#PR 21 (Acetic acid- Potassium dichromate)#0#0##
+Nickle chloride#1000#PR 21 (Acetic acid- Potassium dichromate)#0#0##
+Magnesium chloride#1000#PR 21 (Acetic acid- Potassium dichromate)#0#0##
+Sodium chloride#1000#PR 21 (Acetic acid- Potassium dichromate)#0#0##
+Zinc chloride#1000#PR 21 (Acetic acid- Potassium dichromate)#0#0##
+Potassium chromate#1000#PR 21 (Acetic acid- Potassium dichromate)#0#0##
+Potassium dichromate#1000#PR 21 (Acetic acid- Potassium dichromate)#0#0##
+Sodium hydroxide#1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Sodium iodide#1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Aluminuum nitrate#1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Calcium nitrite#1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Barium nitrite#1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Cupric nitrate #1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Lead(ii) nitrate#1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Magnesium nitrate#1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Potassium nitrate#1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Silver nitrate#1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Strontium nitrate#1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Zinc nitrate#1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Disodium phosphate#1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Aluminum sulphate#1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Copper sulphate#1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Potassium sulphate#1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Sodium sulphate#1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Sulfuric acid#1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Ferric nitrate#1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Potassium permanganate#1000#PR 22 (Sodium hydroxide- Potassium permanganate)#0#0##
+Spectrophotometer#1000#PR 23/24 #0#0##
+Lense paper#1000#PR 23/24 #0#0##
+Spectronic#1000#PR 23/24 #0#0##
+Precision balance#1000#PR 23/24 #0#0##
+Empty glass/ plastic bottle#1000#PR 25/26#0#0##
+Curvettes#1000#PR 25/26#0#0##
+Scale#1000#PR 25/26#0#0##
+Ferric nittrate#1000#PR 27/28#0#0##
+Ferric nitrate+ nitric acid#1000#PR 27/28#0#0##
+Calcium hydroxide#1000#PR 27/28#0#0##
+Cupric sulphate#1000#PR 27/28#0#0##
+Sodium chloride#1000#PR 27/28#0#0##
+Cupric sulphate, penta hydrate#1000#PR 27/28#0#0##
+Sulphuric acid#1000#PR 27/28#0#0##
+Sodium hydroxide#1000#PR 27/28#0#0##
+Sodium carbonate#1000#PR 27/28#0#0##
+Magnesium chloride#1000#PR 27/28#0#0##
+Nitric acid#1000#PR 27/28#0#0##
+Cupric chloride#1000#PR 27/28#0#0##
+Silver nitrate#1000#PR 27/28#0#0##
+Hydrochloric acid#1000#PR 27/28#0#0##
+Sodium acetate#1000#PR 27/28#0#0##
+Saturated Sodium Tetraborate#1000#PR 27/28#0#0##
+Barium nitrate#1000#PR 27/28#0#0##
+Paper towels and soap#1000#PR 29/30#0#0##
+Bell jars#1000#PR 31/32#0#0##
+Van the graaff generator#2023#C1/C2#0#0##
+Aluminum foil#2023#C1/C2#0#0##
+Sargent Welch scientific co#2023#C3/C4#0#0##
+Pin hole cameras#2023#C7/C8#0#0##
+Making a micrroscope lab#2023#C7/C8#0#0##
+Biconcave lenses#2023#C7/C8#0#0##
+Wooden blocks#2023#C7/C8#0#0##
+Power supplies#2023#C9/C10#11#11##
+Spectrum tube power supply#2023#C11#1#1##
+Wooden boards#2023#C12/C14#0#0##
+Foam boards#2023#C14/C15#0#0##
+Wire rolls#2023#C16/C7#0#0##
+Amp meter#2023#C18/C19#0#0##
+Volt meter#2023#C19/C19#0#0##
+Light bulbs#2023#C20/C21#0#0##
+Circuits#2023#C20/C21#0#0##
+Cracker container#2023#C22/C23#0#0##
+Plastic rods#2023#C22/C23#0#0##
+Dry cell demo#2023#C24/C5#0#0##
+Wires#2023#C24/C25#0#0##
+Voltaic cell parts#2023#C24/C25#0#0##
+Nerf guns#2044#P29/P28#0#0##
+Golf balls#2044#P29/P28#0#0##
+Ballistic car#2044#P29/P28#0#0##
+Coffee  filter#2044#P29/P28#0#0##
+Basketball#2044#P29/P28#0#0##
+Arrows#2044#P26/P27#0#0##
+Toy cars#2044#P26/P27#0#0##
+balance ball#2044#P25/P24#0#0##
+Toy cars#2044#P25/P24#0#0##
+bowling pins#2044#P25/P24#0#0##
+shock pendulum apparatus#2044#P25/P24#0#0##
+Fan cart#2044#P25/P24#0#0##
+plastic eggshells#2044#P25/P24#0#0##
+dominos#2044#P25/P24#0#0##
+think ominos#2044#P25/P24#0#0##
+Hydraulicss#2044#P23/P22#0#0##
+Pennies#2044#P23/P22#0#0##
+Toy gyroscopes#2044#P23/P22#0#0##
+Farad Capacitors#2044#P23/P22#10#10##
+OAP Torque Lab#2044#P23/P22#0#0##
+Magnestic power supplies#2044#P21/P20#0#0##
+Iron filings#2044#P19/P18#0#0##
+Pins, nails, glass jar#2044#P19/P18#0#0##
+Motor kits#2044#P19/P18#10#10##
+Magnetic bars#2044#P19/P18#39#39##
+Wooden stick wrapped in coil#2044#P19/P18#0#0##
+Compasses#2044#P17/P16#36#36##
+Coil conductors#2044#P17/P16#14#14##
+plastic plates#2044#P17/P16#8#8##
+magnetic tape#2044#P17/P16#2#2##
+Iron filings#2044#P17/P16#36#36##
+Horseshoe magnet#2044#P17/P16#5#5##
+Electromagnetism demonstrators#2044#P17/P16#0#0##
+Magnetizer#2044#P17/P16#0#0##
+Power supply#2044#P15/P14#0#0##
+Speailers/coils#2044#P15/P14#0#0##
+Bread board#2044#P15/P14#1#1##
+Semi conductor unit#2044#P15/P14#9#9##
+diode lab#2044#P15/P14#0#0##
+metal power cans#2044#P15/P14#0#0##
+Long coils#2044#P12/P13#28#28##
+Air coil solenoid#2044#P12/P13#0#0##
+condenser electroscope attachement#2044#P12/P13#0#0##
+Prosectile launchers (nerf)#2044#P12/P13#0#0##
+Electromag induction coils#2044#P12/P13#0#0##
+Transformers demo#2044#P12/P13#0#0##
+Gr 11 Molecular Model Kits#1055#C1/C2#0#0##
+Extra molecular model connectors#1055#C1/C2#0#0##
+Syrofoam balls Delbi#1055#C1/C2#0#0##
+Matchbox#1055#C1/C2#0#0##
+Gr 12 Bonding sticks#1055#C1/C2#0#0##
+Silberberg 6e Textbooks AP#1055#C3/C4#0#0##
+Precision balances (not working?)#1055#C7/C8#4#4##
+Junior electronic balances#1055#C7/C8#2#2##
+Watershed kits#1055#C7/C8#4#4##
+1000 mL Erlenmyer flasks#1055#C9/C10#7#7##
+Metal plating thing?#1055#C9/C10#0#0##
+Test Tube racks#1055#C9/C10#8#8##
+Gr 9 Sunflower fertlizer bottles#1055#C9/C10#4#4##
+Grade 9 Chemistry#1055#C18/C19#0#0##
+Gr 9 Gas Tests#1055#C18/C19#0#0##
+Gr 9 Mystery Powders #1055#C18/C19#0#0##
+Gr 9 Physical / chemical properties#1055#C18/C19#0#0##
+Gr 9 identifying substances#1055#C18/C19#0#0##
+Gr 9 predator-prey game kit#1055#C18/C19#0#0##
+Ammonium Demo Equipment#1055#C22/23#0#0##
+Tealights#1055#C22/23#0#0##
+500 mL Round Flasks(boxes)#1055#C22/23#2#2##
+11U Chem Metal Precipitation Lab#1055#C22/23#0#0##
+Gr 9 Blackbox Lab Equipment#1055#C24/C25#0#0##
+11U Gas Laws Equipment#1055#C24/C25#0#0##
+11U IMF demo jars#1055#C24/C25#0#0##
+Double volume air pump#1055#C24/C25#0#0##
+11U IMF Demos#1055#C25/27#0#0##
+Detective's Casebook#1055#C25/27#0#0##
+Styrofoam nuggets#1055#C25/27#0#0##
+11U Noodlelium lab#1055#C25/27#0#0##
+VERY OLD Environmental science textbooks#1055#C11#0#0##
+Precision Bubbler Outfit#1055#C11#0#0##
+Zumdahl 6th edition textbooks#1055#C12/13#0#0##
+Chemistry 11U Textbooks#1055#C14/15#0#0##
+Chemistry 11U Textbooks#1055#C16/17#0#0##
+KLEENEX BOXES!!!!#1055#C20/21#0#0##
+Fisherbrand Hydrometers#1055#C20/21#0#0##
+Conductivity Apparatus#1055#C28/29#0#0##
+Vacuum syringes#1055#C28/29#0#0##
+Big plastic tube thingys#1055#C28/29#0#0##
+11U Solutions demo#1055#C28/29#0#0##
+Popcorn making stuff#1055#C28/29#0#0##

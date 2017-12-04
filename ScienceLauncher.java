@@ -5,13 +5,11 @@
  * this includes some variables + file Inputs 
  * @author Ali Meshkat 
  * @Date: Nov 29, 2017
- * @version: 8
  * @instructor: Mr. Mangat
  */
 
 import java.util.ArrayList;
 import java.io.File;
-import java.io.PrintWriter;
 import java.util.Scanner;
 import java.io.IOException;
 
@@ -19,51 +17,25 @@ public class ScienceLauncher {
 
 	static ArrayList<Item> itemList;
 
-	public static void main(String[] args) {
-		// System.out.println(Integer.parseInt("null"));
-		itemList = new ArrayList<Item>();
-		getItems(itemList);
+	 ScienceLauncher() {
+		 
+		itemList = new ArrayList<Item>();//sets arraylist for items
+		getItems(itemList); //inputs items
 
+		//inputs teachers related things
 		getTeachers();
 		getAllTeachersFile();
 		getScienceTeachersFile();
 
 		try {
-			new ChemGui();
+			new ChemGui(); //runs gui + main backend 
 		} catch (Exception E) {
-			System.out.println("ERRRORRRrR");
-
-		}
-		System.out.println("savingggggggggg!!!!");
-		saveToFile(itemList);// saves to file after the program is done
-	}
-
-	/**
-	 * saveToFile is run at the end of the program to save the3 modified itemList to
-	 * the file for future use
-	 * 
-	 * @param: arraylist
-	 *             of items
-	 * @return: void
-	 * @author: Ali Meshkat
-	 */
-	public static void saveToFile(ArrayList<Item> itemList) {
-		try {
-			PrintWriter output = new PrintWriter(new File("Equipment.txt"));
-			for (int i = 0; i <= itemList.size() - 1; i++) {
-				output.print(itemList.get(i).getEquipmentName() + "#");
-				output.print(itemList.get(i).getRoomNumber() + "#");
-				output.print(itemList.get(i).getLocation() + "#");
-				output.print(itemList.get(i).getTotalNumberOfItem() + "#");
-				output.println(itemList.get(i).getNumLeft() + "##");
-
-			}
-			output.close();
-
-		} catch (IOException error) {
-			System.out.println("output IO error");
+			System.out.println("ERROR running chemGui ");
+			E.printStackTrace();
 		}
 	}
+
+
 
 	/**
 	 * getItems 
@@ -82,7 +54,6 @@ public class ScienceLauncher {
 				String roomNum = "";
 				String location = "";
 				String quantity = "";
-				String numLeft = "";
 				boolean terminated = false; // if reached "##" which means the line has ended
 				while (!item.substring(i, i + 1).equals("#")) { // everything before #
 					name += item.substring(i, i + 1); // add to name
@@ -116,20 +87,9 @@ public class ScienceLauncher {
 						}
 						i++;
 
-						if (item.substring(i, i + 1).equals("#")) {
-							terminated = true;
-						}
-						if (!terminated) {
-							while (!item.substring(i, i + 1).equals("#")) {
-								numLeft += item.substring(i, i + 1);
-								i++;
-							}
-							i++;
-
-						}
 					}
 				}
-				itemList.add(new Item(name, roomNum, location, quantity, numLeft)); //adds item to arraylist
+				itemList.add(new Item(name, roomNum, location, quantity, /*numLeft*/ quantity)); //adds item to arraylist
 			}
 			input.close(); //closes scanner 
 		} catch (IOException FileNotFoundException) { // checks for io exception
@@ -169,14 +129,13 @@ public class ScienceLauncher {
 						i++;
 					}
 
-					System.out.println("line Num:" + lineNum);
+					if(!name.equals(""))
 					itemList.get(lineNum).getSignOutName().add(name); // adds the teacher to item
 
 					name = "";
 					i++;
 					if (item.substring(i, i + 1).equals("#")) { // if end of line
 						terminated = true;
-						System.out.println("termninated");
 					}
 				}
 			}

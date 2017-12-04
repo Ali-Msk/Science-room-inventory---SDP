@@ -3,6 +3,8 @@
  * is an object for all the equipment that will be stored 
  * stores the name, teachers who have signed it out and the quantity(total and current)
  * @auhtor: Ali Meshkat, Vincent Zhang 
+ * @date: Nov 29, 2017
+ * @instructor: Mr. Mangat
  */
 import java.util.ArrayList;
 import java.lang.Integer;
@@ -49,39 +51,54 @@ public class Item {
 		signOutName = new ArrayList<String>();
 	}
 
-	// signout some number of item
+/**
+ * signOut
+ * takes in two variables of name and amount and signs out the item for that teaher
+ * @param teacherName
+ * @param numberOfItemSignOut
+ * @return: void
+ * @author: Ali Meshkat + Vincent Zhang   
+ */
 	public void signOut(String teacherName, int numberOfItemSignOut) {
-		boolean dontAdd = false;
-		for(int i = 0; i<=signOutName.size()-1; i ++) {
-			if (signOutName.get(i).equals(teacherName)) {
-				dontAdd = true;
+		if (this.numLeft - numberOfItemSignOut >= 0) {
+			boolean dontAdd = false;
+			for (int i = 0; i <= signOutName.size() - 1; i++) {
+				if (signOutName.get(i).equals(teacherName)) {
+					dontAdd = true;
+				}
 			}
-		}
-		if(!dontAdd) {
-			signOutName.add(teacherName);
-		}
-		
-		this.numLeft -= numberOfItemSignOut;
-		// if it has a teacher's name in the signout list, then combine two
-		// signout values to one
-		if (signOut.containsKey(teacherName)) {
-			// if the sign out number of the teacher + numberOfItemSignOut is 0,
-			// then remove the teacher's name from the list.
-			if (signOut.get(teacherName) == -numberOfItemSignOut) {
-				signOut.remove(teacherName);
+			if (!dontAdd) {
+				signOutName.add(teacherName);
+			}
 
+			this.numLeft -= numberOfItemSignOut;
+			// if it has a teacher's name in the signout list, then combine two
+			// signout values to one
+			if (signOut.containsKey(teacherName)) {
+				// if the sign out number of the teacher + numberOfItemSignOut is 0,
+				// then remove the teacher's name from the list.
+				if (signOut.get(teacherName) == -numberOfItemSignOut) {
+					signOut.remove(teacherName);
+
+				} else {
+					// add number sign out to the list
+					signOut.put(teacherName, signOut.get(teacherName) + numberOfItemSignOut);
+
+				}
 			} else {
-				// add number sign out to the list
-				signOut.put(teacherName, signOut.get(teacherName) + numberOfItemSignOut);
-
+				// else add the name to the list
+				signOut.put(teacherName, numberOfItemSignOut);
 			}
-		} else {
-			// else add the name to the list
-			signOut.put(teacherName, numberOfItemSignOut);
 		}
 	}
 
-	// method for signBack
+	/**
+	 * signBack
+	 * takes in the teacher name and signs back all of this item that he took 
+	 * @param teacherName
+	 * @return: void
+	 * @author: Ali Meshkat + Vincent Zhang  
+	 */
 	public void signBack(String teacherName) {
 		this.numLeft += signOut.get(teacherName); // updates amount left
 		for (int i =0; i <= signOutName.size()-1; i++) {
@@ -103,6 +120,7 @@ public class Item {
 
 	// a method that get the totalAmountItemInOneLocation number of item sign
 	// out
+	//vincent
 	public int getNumSignChange() {
 		int num = 0;
 		Iterator temp = signOut.entrySet().iterator();
@@ -125,7 +143,12 @@ public class Item {
 	 * @author: Ali Meshkat
 	 */
 	public int getTeacherAmount(String name) {
+		if(signOut.containsKey(name)) {
 		return signOut.get(name);
+		}else {
+			return -2; //for the output
+		}
+		
 	}
 	
 	
